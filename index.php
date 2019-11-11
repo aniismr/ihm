@@ -41,107 +41,16 @@
 				<nav id="navigation">
 					<ul id="responsive">
 
-						<li><a href="#" class="current">Home</a>
-							<ul class="dropdown-nav">
-								<li><a href="index-2.html">Home 1</a></li>
-								<li><a href="index-3.html">Home 2</a></li>
-								<li><a href="index-4.html">Home 3</a></li>
-							</ul>
+						<li>
+							<a href="#" class="current">Accueil</a>
 						</li>
 
-						<li><a href="#">Find Work</a>
-							<ul class="dropdown-nav">
-								<li><a href="#">Browse Jobs</a>
-									<ul class="dropdown-nav">
-										<li><a href="jobs-list-layout-full-page-map.html">Full Page List + Map</a></li>
-										<li><a href="jobs-grid-layout-full-page-map.html">Full Page Grid + Map</a></li>
-										<li><a href="jobs-grid-layout-full-page.html">Full Page Grid</a></li>
-										<li><a href="jobs-list-layout-1.html">List Layout 1</a></li>
-										<li><a href="jobs-list-layout-2.html">List Layout 2</a></li>
-										<li><a href="jobs-grid-layout.html">Grid Layout</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Browse Tasks</a>
-									<ul class="dropdown-nav">
-										<li><a href="tasks-list-layout-1.html">List Layout 1</a></li>
-										<li><a href="tasks-list-layout-2.html">List Layout 2</a></li>
-										<li><a href="tasks-grid-layout.html">Grid Layout</a></li>
-										<li><a href="tasks-grid-layout-full-page.html">Full Page Grid</a></li>
-									</ul>
-								</li>
-								<li><a href="browse-companies.html">Browse Companies</a></li>
-								<li><a href="single-job-page.html">Job Page</a></li>
-								<li><a href="single-task-page.html">Task Page</a></li>
-								<li><a href="single-company-profile.html">Company Profile</a></li>
-							</ul>
+						<li>
+							<a href="#">Trouver un job</a>
 						</li>
 
-						<li><a href="#">For Employers</a>
-							<ul class="dropdown-nav">
-								<li><a href="#">Find a Freelancer</a>
-									<ul class="dropdown-nav">
-										<li><a href="freelancers-grid-layout-full-page.html">Full Page Grid</a></li>
-										<li><a href="freelancers-grid-layout.html">Grid Layout</a></li>
-										<li><a href="freelancers-list-layout-1.html">List Layout 1</a></li>
-										<li><a href="freelancers-list-layout-2.html">List Layout 2</a></li>
-									</ul>
-								</li>
-								<li><a href="single-freelancer-profile.html">Freelancer Profile</a></li>
-								<li><a href="dashboard-post-a-job.html">Post a Job</a></li>
-								<li><a href="dashboard-post-a-task.html">Post a Task</a></li>
-							</ul>
+						<li><a href="#">Demander un service</a>
 						</li>
-
-						<li><a href="#">Dashboard</a>
-							<ul class="dropdown-nav">
-								<li><a href="dashboard.html">Dashboard</a></li>
-								<li><a href="dashboard-messages.html">Messages</a></li>
-								<li><a href="dashboard-bookmarks.html">Bookmarks</a></li>
-								<li><a href="dashboard-reviews.html">Reviews</a></li>
-								<li><a href="dashboard-manage-jobs.html">Jobs</a>
-									<ul class="dropdown-nav">
-										<li><a href="dashboard-manage-jobs.html">Manage Jobs</a></li>
-										<li><a href="dashboard-manage-candidates.html">Manage Candidates</a></li>
-										<li><a href="dashboard-post-a-job.html">Post a Job</a></li>
-									</ul>
-								</li>
-								<li><a href="dashboard-manage-tasks.html">Tasks</a>
-									<ul class="dropdown-nav">
-										<li><a href="dashboard-manage-tasks.html">Manage Tasks</a></li>
-										<li><a href="dashboard-manage-bidders.html">Manage Bidders</a></li>
-										<li><a href="dashboard-my-active-bids.html">My Active Bids</a></li>
-										<li><a href="dashboard-post-a-task.html">Post a Task</a></li>
-									</ul>
-								</li>
-								<li><a href="dashboard-settings.html">Settings</a></li>
-							</ul>
-						</li>
-
-						<li><a href="#">Pages</a>
-							<ul class="dropdown-nav">
-								<li>
-									<a href="#">Open Street Map</a>
-									<ul class="dropdown-nav">
-										<li><a href="jobs-list-layout-full-page-map-OpenStreetMap.html">Full Page List + Map</a></li>
-										<li><a href="jobs-grid-layout-full-page-map-OpenStreetMap.html">Full Page Grid + Map</a></li>
-										<li><a href="single-job-page-OpenStreetMap.html">Job Page</a></li>
-										<li><a href="single-company-profile-OpenStreetMap.html">Company Profile</a></li>
-										<li><a href="pages-contact-OpenStreetMap.html">Contact</a></li>
-										<li><a href="jobs-list-layout-1-OpenStreetMap.html">Location Autocomplete</a></li>
-									</ul>
-								</li>
-								<li><a href="pages-blog.html">Blog</a></li>
-								<li><a href="pages-pricing-plans.html">Pricing Plans</a></li>
-								<li><a href="pages-checkout-page.html">Checkout Page</a></li>
-								<li><a href="pages-invoice-template.html">Invoice Template</a></li>
-								<li><a href="pages-user-interface-elements.html">User Interface Elements</a></li>
-								<li><a href="pages-icons-cheatsheet.html">Icons Cheatsheet</a></li>
-								<li><a href="pages-login.html">Login & Register</a></li>
-								<li><a href="pages-404.html">404 Page</a></li>
-								<li><a href="pages-contact.html">Contact</a></li>
-							</ul>
-						</li>
-
 					</ul>
 				</nav>
 				<div class="clearfix"></div>
@@ -155,7 +64,7 @@
 			<div class="right-side">
 
 				<div class="header-widget">
-					<a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><i class="icon-feather-log-in"></i> <span>Log In / Register</span></a>
+					<a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><i class="icon-feather-log-in"></i> <span>Se connecter / S'inscrire</span></a>
 				</div>
 
 				<!-- Mobile Navigation Button -->
@@ -191,9 +100,9 @@
 			<div class="col-md-12">
 				<div class="banner-headline">
 					<h3>
-						<strong>Hire experts or be hired for any job, any time.</strong>
+						<strong>Trouvez le prestataire idéal pour tous les services du quotidien</strong>
 						<br>
-						<span>Thousands of small businesses use <strong class="color">Hireo</strong> to turn their ideas into reality.</span>
+						<span>Des milliers d'etreprises et de particuliers utilisent <strong class="color">Hireo</strong> </span>
 					</h3>
 				</div>
 			</div>
@@ -206,22 +115,22 @@
 
 					<!-- Search Field -->
 					<div class="intro-search-field with-autocomplete">
-						<label for="autocomplete-input" class="field-title ripple-effect">Where?</label>
+						<label for="autocomplete-input" class="field-title ripple-effect">Où cherchez vous?</label>
 						<div class="input-with-icon">
-							<input id="autocomplete-input" type="text" placeholder="Online Job">
+							<input id="autocomplete-input" type="text" placeholder="Tunis, Sfax , Gabes ...">
 							<i class="icon-material-outline-location-on"></i>
 						</div>
 					</div>
 
 					<!-- Search Field -->
 					<div class="intro-search-field">
-						<label for ="intro-keywords" class="field-title ripple-effect">What job you want?</label>
-						<input id="intro-keywords" type="text" placeholder="Job Title or Keywords">
+						<label for ="intro-keywords" class="field-title ripple-effect">Quel service cherchez vous?</label>
+						<input id="intro-keywords" type="text" placeholder="Plomberie, Electricité, Etanchité ...">
 					</div>
 
 					<!-- Button -->
 					<div class="intro-search-button">
-						<button class="button ripple-effect" onclick="window.location.href='jobs-list-layout-full-page-map.html'">Search</button>
+						<button class="button ripple-effect" onclick="window.location.href='jobs-list-layout-full-page-map.html'">Chercher</button>
 					</div>
 				</div>
 			</div>
@@ -233,15 +142,11 @@
 				<ul class="intro-stats margin-top-45 hide-under-992px">
 					<li>
 						<strong class="counter">1,586</strong>
-						<span>Jobs Posted</span>
-					</li>
-					<li>
-						<strong class="counter">3,543</strong>
-						<span>Tasks Posted</span>
+						<span>Jobs publiées</span>
 					</li>
 					<li>
 						<strong class="counter">1,232</strong>
-						<span>Freelancers</span>
+						<span>Jobbeurs</span>
 					</li>
 				</ul>
 			</div>
@@ -260,7 +165,8 @@
 			<div class="col-xl-12">
 
 				<div class="section-headline centered margin-bottom-15">
-					<h3>Popular Job Categories</h3>
+					<h3><strong>De quel service avez-vous besoin ?</strong></h3>
+					<h5>Pour chaque situation, trouvez le prestataire dont les compétences répondent à vos attentes et à votre niveau d’exigence.</h5>
 				</div>
 
 				<!-- Category Boxes Container -->
@@ -560,7 +466,7 @@
 			<!-- Section Headline -->
 			<div class="col-xl-12">
 				<div class="section-headline centered margin-top-0 margin-bottom-45">
-					<h3>Featured Cities</h3>
+					<h3>Nous sommes partout en Tunisie</h3>
 				</div>
 			</div>
 
@@ -568,7 +474,7 @@
 				<!-- Photo Box -->
 				<a href="jobs-list-layout-1.html" class="photo-box" data-background-image="images/featured-city-01.jpg">
 					<div class="photo-box-content">
-						<h3>San Francisco</h3>
+						<h3>Tunis</h3>
 						<span>376 Jobs</span>
 					</div>
 				</a>

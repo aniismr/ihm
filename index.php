@@ -7,6 +7,7 @@ if (isset($_GET['action']))
 switch ($_GET['action']){
     default:
     listCategorie();
+    
 }
 else
 listCategorie();

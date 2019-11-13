@@ -1,10 +1,9 @@
 <?php
 
 include_once 'model/connexion.php';
-require('controller/home.controller.php');
+session_start();
 
 $controller='home.controller';
-$db= dbConnect();
 
 if(isset($_REQUEST['controller'])){
     $controller=$_REQUEST['controller'];
@@ -16,4 +15,5 @@ if(isset($_REQUEST['controller'])){
 else{
     include('controller/'.$controller.'.php');
 }
+
 ?>

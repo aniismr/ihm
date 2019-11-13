@@ -55,7 +55,7 @@
 			<div class="col-md-12">
 				<ul class="intro-stats margin-top-45 hide-under-992px">
 					<li>
-						<strong > <?= $nbCategories ?></strong>
+						<strong class="counter"> <?= $nbCategories ?></strong>
 						<span>Categories</span>
 					</li>
 					<li>
@@ -63,7 +63,7 @@
 						<span>Annonces</span>
 					</li>
 					<li>
-						<strong class="counter">1,232</strong>
+						<strong class="counter"><?= $nbJobbeurs ?></strong>
 						<span>Jobbeurs</span>
 					</li>
 				</ul>

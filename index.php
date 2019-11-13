@@ -1,13 +1,14 @@
 <?php
 include_once 'model/connexion.php';
-require('controller/categorie.controller.php');
+require('controller/home.controller.php');
 
 $db= dbConnect();
 if (isset($_GET['action']))       
 switch ($_GET['action']){
     default:
-    listCategorie();
-    
+showHome();    
 }
 else
-listCategorie();
+showHome();    
+
+?>

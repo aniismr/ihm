@@ -1,11 +1,17 @@
 <?php
-require ('../ihm/model/categorie.php');
+require ('model/categorie.php');
 function listCategorie()
 {
-	$nbCategories = categorie::getNbCategories();
     $categories = categorie::getCategories();
-    require('view/home.view.php');
+    return $categories;
 
+}
+
+function nbCat(){
+
+    $nbCategories=categorie::getNbCategories();
+    return $nbCategories;
+    
 }
 
 ?>

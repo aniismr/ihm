@@ -55,11 +55,11 @@
 			<div class="col-md-12">
 				<ul class="intro-stats margin-top-45 hide-under-992px">
 					<li>
-						<strong > <?= $nbCategories; ?></strong>
+						<strong > <?= $nbCategories ?></strong>
 						<span>Categories</span>
 					</li>
 					<li>
-						<strong class="counter"><?php $nbAnnonces; ?></strong>
+						<strong class="counter"><?= $nbAnnonces ?></strong>
 						<span>Annonces</span>
 					</li>
 					<li>

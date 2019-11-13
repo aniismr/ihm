@@ -6,7 +6,7 @@
 <!-- Intro Banner
 ================================================== -->
 <!-- add class "disable-gradient" to enable consistent background overlay -->
-<div class="intro-banner" data-background-image="../ihm/public/images/home-background.jpg">
+<div class="intro-banner" data-background-image="public/images/home-background.jpg">
 	<div class="container">
 		
 		<!-- Intro Headline -->

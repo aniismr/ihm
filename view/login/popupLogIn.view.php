@@ -23,7 +23,7 @@ ob_start();
             </div>
                 
             <!-- Form -->
-            <form method="post" action="index.php?controller=login.controller&action=login" id="login-form">
+            <form method="post" action="index.php?controller=login&action=login" id="login-form">
                 <div class="input-with-icon-left">
                     <i class="icon-material-baseline-mail-outline"></i>
                     <input type="text" class="input-text with-border" name="emailaddress" id="emailaddress" placeholder="Email Address" required/>

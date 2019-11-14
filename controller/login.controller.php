@@ -9,7 +9,7 @@ if(isset($action)){
             if(isset($user)&&isset($pass)){
                 $tmp_user=new utilisateur($user,$pass);
                 if($tmp_user->checkLogin()){
-                    $_SESSION['user']=$tmp_user->getName();
+                    $_SESSION['user']=$tmp_user;
                 }
                 
             }

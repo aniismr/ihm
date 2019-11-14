@@ -33,7 +33,7 @@
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="index-2.html"><img src="public/images/logo.png" alt=""></a>
+					<a href="index.php"><img src="public/images/logo.png" alt=""></a>
 				</div>
 
 				<!-- Main Navigation -->
@@ -41,7 +41,7 @@
 					<ul id="responsive">
 
 						<li>
-							<a href="#" class="current">Accueil</a>
+							<a href="index.php" class="current">Accueil</a>
 						</li>
 
 						<li>

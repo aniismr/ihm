@@ -1,0 +1,9 @@
+<?php
+if(isset($_SESSION['user'])){
+    require('view/login/loggedIn.view.php');
+    require('view/dashboard/dashboard.view.php');
+    require('view/template/template.php');  
+}
+else{
+    header('location:index.php?controller=login&action=login'); 
+}

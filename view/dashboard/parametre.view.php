@@ -6,14 +6,14 @@ ob_start();
     
     <!-- Dashboard Headline -->
     <div class="dashboard-headline">
-        <h3>Settings</h3>
+        <h3>Paramètres</h3>
 
         <!-- Breadcrumbs -->
         <nav id="breadcrumbs" class="dark">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li>Settings</li>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Tableau de bord</a></li>
+                <li>Paramètres</li>
             </ul>
         </nav>
     </div>
@@ -27,7 +27,7 @@ ob_start();
 
                 <!-- Headline -->
                 <div class="headline">
-                    <h3><i class="icon-material-outline-account-circle"></i> My Account</h3>
+                    <h3><i class="icon-material-outline-account-circle"></i> Mon compte</h3>
                 </div>
 
                 <div class="content with-padding padding-bottom-0">
@@ -66,12 +66,12 @@ ob_start();
                                         <div class="account-type">
                                             <div>
                                                 <input type="radio" name="account-type-radio" id="freelancer-radio" class="account-type-radio" <?php if($user->getEtat()==0) echo "checked"?>/>
-                                                <label for="freelancer-radio" class="ripple-effect-dark"><i class="icon-material-outline-account-circle"></i> Freelancer</label>
+                                                <label for="freelancer-radio" class="ripple-effect-dark"><i class="icon-material-outline-account-circle"></i> Jobbeur</label>
                                             </div>
 
                                             <div>
                                                 <input type="radio" name="account-type-radio" id="employer-radio" class="account-type-radio"<?php if($user->getEtat()==1) echo "checked"?>/>
-                                                <label for="employer-radio" class="ripple-effect-dark"><i class="icon-material-outline-business-center"></i> Employer</label>
+                                                <label for="employer-radio" class="ripple-effect-dark"><i class="icon-material-outline-business-center"></i> Employeur</label>
                                             </div>
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@ ob_start();
 
                 <!-- Headline -->
                 <div class="headline">
-                    <h3><i class="icon-material-outline-face"></i> My Profile</h3>
+                    <h3><i class="icon-material-outline-face"></i> Mon profile</h3>
                 </div>
 
                 <div class="content">
@@ -109,23 +109,23 @@ ob_start();
                                 <div class="submit-field">
                                     <div class="bidding-widget">
                                         <!-- Headline -->
-                                        <span class="bidding-detail">Set your <strong>minimal hourly rate</strong></span>
+                                        <span class="bidding-detail">Ajuster votre <strong>salaire minimum</strong> par intervention</span>
 
                                         <!-- Slider -->
-                                        <div class="bidding-value margin-bottom-10">$<span id="biddingVal"></span></div>
-                                        <input class="bidding-slider" type="text" value="" data-slider-handle="custom" data-slider-currency="$" data-slider-min="5" data-slider-max="150" data-slider-value="35" data-slider-step="1" data-slider-tooltip="hide" />
+                                        <div class="bidding-value margin-bottom-10"> DT <span id="biddingVal"></span></div>
+                                        <input class="bidding-slider" type="text" value="" data-slider-handle="custom" data-slider-currency="DT" data-slider-min="5" data-slider-max="150" data-slider-value="35" data-slider-step="1" data-slider-tooltip="hide" />
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-xl-4">
                                 <div class="submit-field">
-                                    <h5>Skills <i class="help-icon" data-tippy-placement="right" title="Add up to 10 skills"></i></h5>
+                                    <h5>Compétences <i class="help-icon" data-tippy-placement="right" title="Vous pouvez ajouter jusqu'a 10 compétences"></i></h5>
 
                                     <!-- Skills List -->
                                     <div class="keywords-container">
                                         <div class="keyword-input-container">
-                                            <input type="text" class="keyword-input with-border" placeholder="e.g. Angular, Laravel"/>
+                                            <input type="text" class="keyword-input with-border" placeholder="Plomberie, Etanchité ..."/>
                                             <button class="keyword-input-button ripple-effect"><i class="icon-material-outline-add"></i></button>
                                         </div>
                                         <div class="keywords-list">

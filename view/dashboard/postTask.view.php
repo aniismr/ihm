@@ -6,14 +6,14 @@ ob_start();
 			
 			<!-- Dashboard Headline -->
 			<div class="dashboard-headline">
-				<h3>Post a Task</h3>
+				<h3>Demander un service</h3>
 
 				<!-- Breadcrumbs -->
 				<nav id="breadcrumbs" class="dark">
 					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Dashboard</a></li>
-						<li>Post a Task</li>
+						<li><a href="#">Accueil</a></li>
+						<li><a href="#">Tableau de bord</a></li>
+						<li>Demander un service</li>
 					</ul>
 				</nav>
 			</div>
@@ -28,7 +28,7 @@ ob_start();
 
 						<!-- Headline -->
 						<div class="headline">
-							<h3><i class="icon-feather-folder-plus"></i> Task Submission Form</h3>
+							<h3><i class="icon-feather-folder-plus"></i> Formulaire de demande de service</h3>
 						</div>
 
 						<div class="content with-padding padding-bottom-10">
@@ -36,22 +36,22 @@ ob_start();
 
 								<div class="col-xl-4">
 									<div class="submit-field">
-										<h5>Project Name</h5>
+										<h5>Nom de la demande</h5>
                                         <input type="text" class="with-border" placeholder="e.g. amenagement de maison" name="libelle">
 									</div>
 								</div>
 
 								<div class="col-xl-4">
 									<div class="submit-field">
-										<h5>Category</h5>
+										<h5>Categorie</h5>
 										<select class="selectpicker with-border" data-size="7" title="Select Category" name="categorie">
                                         <?php 
-				    while($categorie=$categories->fetch()){
-				     ?>
-											<option><?= $categorie["nom"]?></option>
+                                            while($categorie=$categories->fetch()){
+                                             ?>
+                                                <option><?= $categorie["nom"]?></option>
                                             <?php
-				    }
-				    ?>
+                                            }
+                                            ?>
 										</select>
 									</div>
 								</div>
@@ -88,7 +88,7 @@ ob_start();
 
 								<div class="col-xl-6">
 									<div class="submit-field">
-										<h5>What is your estimated budget?</h5>
+										<h5>Budget èstimé</h5>
 										
 											
 												<div class="input-with-icon">
@@ -104,7 +104,7 @@ ob_start();
                                 <div class="col-xl-6">
 									<div class="submit-field">
 										<h5>Delais</h5>
-                                        <input type="text" class="with-border" placeholder="delais" name="delais">
+                                        <input type="date" class="with-border" placeholder="delais" name="delais">
 									</div>
 								</div>
 
@@ -112,12 +112,12 @@ ob_start();
 
 								<div class="col-xl-12">
 									<div class="submit-field">
-										<h5>Describe Your Project</h5>
+										<h5>Decrire votre projet</h5>
 										<textarea cols="30" rows="5" class="with-border" name="description"></textarea>
 										<div class="uploadButton margin-top-30">
 											<input class="uploadButton-input" type="file" accept="image/*, application/pdf" id="upload" multiple/>
-											<label class="uploadButton-button ripple-effect" for="upload">Upload Files</label>
-											<span class="uploadButton-file-name">Images or documents that might be helpful in describing your project</span>
+											<label class="uploadButton-button ripple-effect" for="upload">Telecharger des fichiers</label>
+											<span class="uploadButton-file-name">Images ou documents pouvant être utiles pour décrire votre projet</span>
 										</div>
 									</div>
 								</div>
@@ -139,7 +139,7 @@ ob_start();
 			<div class="dashboard-footer-spacer"></div>
 			<div class="small-footer margin-top-15">
 				<div class="small-footer-copyrights">
-					© 2019 <strong>Hireo</strong>. All Rights Reserved.
+					© 2019 <strong>Chanty</strong>. Tout les droits reservées.
 				</div>
 				<ul class="footer-social-links">
 					<li>

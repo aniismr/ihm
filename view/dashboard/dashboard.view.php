@@ -39,7 +39,7 @@
 									<li><a href="dashboard-manage-tasks.html">Manage Tasks <span class="nav-tag">2</span></a></li>
 									<li><a href="dashboard-manage-bidders.html">Manage Bidders</a></li>
 									<li><a href="dashboard-my-active-bids.html">My Active Bids <span class="nav-tag">4</span></a></li>
-									<li><a href="dashboard-post-a-task.html">Post a Task</a></li>
+									<li><a href="index.php?controller=dashboard&action=postTask">Post a Task</a></li>
 								</ul>	
 							</li>
 						</ul>

@@ -156,7 +156,7 @@
                 <div class="user-details">
                     <div class="user-avatar status-online"><img src="public/images/user-avatar-small-01.jpg" alt=""></div>
                     <div class="user-name">
-                        Tom Smith <span>Freelancer</span>
+                        <?php echo($user->getName());?> <?php echo($user->getPrenom());?> <span><?php if(($user->getEtat())==0)echo("Utilisateur Normal");else echo("Jobeur");?></span>
                     </div>
                 </div>
                 
@@ -171,7 +171,7 @@
         
         <ul class="user-menu-small-nav">
             <li><a href="index.php?controller=dashboard"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
-            <li><a href="dashboard-settings.html"><i class="icon-material-outline-settings"></i> Settings</a></li>
+            <li><a href="index.php?controller=dashboard&action=parametre"><i class="icon-material-outline-settings"></i> Settings</a></li>
             <li><a href="index.php?controller=login&action=logout"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
         </ul>
 

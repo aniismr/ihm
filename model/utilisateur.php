@@ -1,6 +1,6 @@
 <?php
 class utilisateur{
-    
+    private $id;
     private $nom;
     private $pw;
     private $email;
@@ -33,12 +33,16 @@ class utilisateur{
     public function getEtat(){
         return $this->etat;
     }
+    public function getId(){
+        return $this->id;   
+    }
     public function checkLogin(){
         global $db;
-        $req=$db->prepare("select photo,nom, prenom,etat  from utilisateur where email=? and mdp=?;");
+        $req=$db->prepare("select id,photo,nom, prenom,etat  from utilisateur where email=? and mdp=?;");
         $req->execute(array($this->email,$this->pw));
         $res=$req->fetch();
         if (isset($res['nom'])){
+            $this->id=$res['id'];
             $this->photo=$res['photo'];
             $this->etat=$res['etat'];
             $this->nom=$res['nom'];

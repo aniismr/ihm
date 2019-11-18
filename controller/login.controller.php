@@ -10,7 +10,7 @@ if(isset($action)){
                 $tmp_user=new utilisateur($user,$pass);
                 if($tmp_user->checkLogin()){
                     $_SESSION['user']=serialize($tmp_user);
-                    file_put_contents('store', $_SESSION['user']);
+
             
                 }
                 

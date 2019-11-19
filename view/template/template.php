@@ -70,9 +70,21 @@
 	<!-- Header / End -->
 
 </header>
+<?php if(isset($dashboard)){?>
+	<div class="dashboard-container">
+	<?php echo($dashboard);
+	if(isset($content))echo($content);
+	?>
+	</div>
+	<?php 
+}else{
+?>
+
 <div>
-<?= $content ?>
+<?php if(isset($content))echo($content); ?>
 </div>
+<?php }?>
+
 <div class="clearfix"></div>
 <div id="footer">
 	

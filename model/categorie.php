@@ -15,4 +15,11 @@ class categorie{
 		$req->closeCursor();
 		return $donnees['NbCat'];
     }
+    public static function getId($nom){
+        global $db;
+        $req=$db->prepare('select id from categorie where nom=? ;');
+        $req->execute(array($nom));
+        $res=$req->fetch();
+        return $res['id'];
+    }
 }

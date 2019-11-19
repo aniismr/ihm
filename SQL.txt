@@ -1,0 +1,3 @@
+ALTER TABLE `utilisateur` ADD `email` VARCHAR(255) NOT NULL AFTER `prenom`; 
+UPDATE `utilisateur` SET `email` = 'benmohamed@gmail.com' WHERE `utilisateur`.`id` = 1 ;
+UPDATE `utilisateur` SET `photo` = 'user-avatar-big-01.jpg' WHERE `utilisateur`.`id` = 1; 

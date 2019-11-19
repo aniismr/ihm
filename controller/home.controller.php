@@ -7,7 +7,10 @@
     $nbCategories=categorie::getNbCategories();
     $nbAnnonces=annonce::getNbAnnonces();
     $nbJobbeurs=utilisateur::getNbJobbeurs();
+    
     if(isset($_SESSION["user"])){
+        $store=$_SESSION['user'];
+        $user=unserialize($store);
         require('view/login/loggedIn.view.php');
     }
     else{

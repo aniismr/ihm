@@ -45,7 +45,7 @@
 						</li>
 
 						<li>
-							<a href="#">Trouver un job</a>
+							<a href="index.php?controller=annonce">Trouver un job</a>
 						</li>
 
 						<li>

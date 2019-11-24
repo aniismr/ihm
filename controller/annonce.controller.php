@@ -1,4 +1,5 @@
 <?php
+<<<<<<< Updated upstream
 
     require ('model/annonce.php');
     require ('model/categorie.php');
@@ -19,3 +20,15 @@
     
 
 ?>
+=======
+    require('model/annonce.php');
+    $action=$_GET['action'];
+    if(isset($action)){
+        switch($action){
+            case 'list':
+                $annonces=annonce::getAnnonces();
+                require('view/annonce/listAnnonce.view.php');
+            break;
+        }
+    }
+>>>>>>> Stashed changes

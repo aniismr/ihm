@@ -31,7 +31,13 @@
 					<div class="intro-search-field with-autocomplete">
 						<label for="autocomplete-input" class="field-title ripple-effect">Où?</label>
 						<div class="input-with-icon">
-							<input id="autocomplete-input" type="text" placeholder="Tunis, Gabes, Kasserine ...">
+						<select class="selectpicker with-border" data-size="7" title="Selectionner la catégorie" data-live-search="true">
+							<?php while($categorie=$categories->fetch()){
+								?>
+							<option><?php echo($categorie['nom']);?>
+							</option>
+							<?php } ?>
+						</select>
 							<i class="icon-material-outline-location-on"></i>
 						</div>
 					</div>
@@ -39,7 +45,9 @@
 					<!-- Search Field -->
 					<div class="intro-search-field">
 						<label for ="intro-keywords" class="field-title ripple-effect">Quel service cherchez vous?</label>
-						<input id="intro-keywords" type="text" placeholder="Plomberie, Electricité ...">
+						<select class="selectpicker with-border" data-size="7" title="Selectionner les skills" data-live-search="true">
+						
+							</select>
 					</div>
 
 					<!-- Button -->

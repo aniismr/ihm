@@ -119,65 +119,22 @@
 					<h3>Nous sommes partout en Tunisie !</h3>
 				</div>
 			</div>
+                <?php
+                    while($location=$locations->fetch()){
+                ?>
                 <div class="col-xl-2 col-md-2">
                     <!-- Photo Box -->
-                    <a href="jobs-list-layout-1.html" class="photo-box" data-background-image="public/images/villes/tunis.jpg">
+                    <a href="jobs-list-layout-1.html" class="photo-box" data-background-image="<?php echo'public/images/villes/'.$location["photo"] ?>">
                         <div class="photo-box-content">
-                            <h3>Tunis</h3>
+                            <h3><?= $location["nom"] ?></h3>
                             <span>376 Jobs</span>
                         </div>
                     </a>
                 </div>
+                <?php
+                        }
+                ?>
 
-                <div class="col-xl-2 col-md-6">
-                    <!-- Photo Box -->
-                    <a href="jobs-list-layout-full-page-map.html" class="photo-box" data-background-image="public/images/villes/sfax.jpg">
-                        <div class="photo-box-content">
-                            <h3>Sfax</h3>
-                            <span>645 Jobs</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-xl-2 col-md-6">
-                    <!-- Photo Box -->
-                    <a href="jobs-grid-layout-full-page.html" class="photo-box" data-background-image="public/images/villes/kasserine.jpg">
-                        <div class="photo-box-content">
-                            <h3>Kasserine</h3>
-                            <span>832 Jobs</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-xl-2 col-md-6">
-                    <!-- Photo Box -->
-                    <a href="jobs-list-layout-2.html" class="photo-box" data-background-image="public/images/villes/beja.jpg">
-                        <div class="photo-box-content">
-                            <h3>Beja</h3>
-                            <span>513 Jobs</span>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="col-xl-2 col-md-6">
-                    <!-- Photo Box -->
-                    <a href="jobs-list-layout-2.html" class="photo-box" data-background-image="public/images/villes/mahdia.jpg">
-                        <div class="photo-box-content">
-                            <h3>Mahdia</h3>
-                            <span>513 Jobs</span>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="col-xl-2 col-md-6">
-                    <!-- Photo Box -->
-                    <a href="jobs-list-layout-2.html" class="photo-box" data-background-image="public/images/villes/sousse.jpg">
-                        <div class="photo-box-content">
-                            <h3>Sousse</h3>
-                            <span>513 Jobs</span>
-                        </div>
-                    </a>
-                </div>
 			<div class="col-xl-12">
 				<div class="font-size-3 font-weight-medium d-block " style="text-decoration: underline;">
 					<a href="villes.html">

@@ -1,19 +1,24 @@
 <?php $title="Liste des annonces";?>
 <?php ob_start() ?>
+</br>
 <div class="container">
 	<div class="row">
 		<div class="col-xl-3 col-lg-4">
 			<div class="sidebar-container">
-				
+				<form action="index.php?controller=annonce&action=listecatloc" method="post">
 				<!-- Location -->
 				<div class="sidebar-widget">
 					<h3>Location</h3>
-					<div class="input-with-icon">
-						<div id="autocomplete-container">
-							<input id="autocomplete-input" type="text" placeholder="Location">
+						<div class="input-with-icon">
+						<select id="skills" class="selectpicker with-border" name="location" data-size="7" title="Selectionner la localisation" data-live-search="true">
+							<?php while($location=$locations->fetch()){
+								?>
+							<option><?php echo($location['nom']);?>
+							</option>
+							<?php } ?>
+						</select>
+							<i class="icon-material-outline-location-on"></i>
 						</div>
-						<i class="icon-material-outline-location-on"></i>
-					</div>
 				</div>
 
 				<!-- Keywords -->
@@ -21,21 +26,24 @@
 				
 				<!-- Category -->
 				<div class="sidebar-widget">
-					<h3>Category</h3>
-					<select class="selectpicker" multiple data-selected-text-format="count" data-size="7" title="All Categories">
-						<option>Accounting and Finance</option>
-						<option>Clerical & Data Entry</option>
-						<option>Counseling</option>
-						<option>Court Administration</option>
-						<option>Human Resources</option>
-						<option>Investigative</option>
-						<option>IT and Computers</option>
-						<option>Law Enforcement</option>
-						<option>Management</option>
-						<option>Miscellaneous</option>
-						<option>Public Relations</option>
-					</select>
+						<h3>Categorie</h3>
+						<div class="input-with-icon">
+						<select id="skills" class="selectpicker with-border" data-size="7" name="categorie" title="Selectionner la categorie" data-live-search="true">
+							<?php while($categorie=$categories->fetch()){
+								?>
+							<option><?php echo($categorie['nom']);?>
+							</option>
+							<?php } ?>
+						</select>
+							<i class="icon-material-outline-location-on"></i>
+						</div>
 				</div>
+<div class="sidebar-widget">
+				<input type="submit" name="submit" class="button ripple-effect big margin-top-30" value="Rechercher"   />
+			</div>
+		</form>
+
+			
 				
 				<!-- Job Types -->
 			
@@ -71,7 +79,7 @@
 				    while($annonce=$annonces->fetch()){
 				     ?>
 				<!-- Job Listing -->
-				<a href="single-job-page.html" class="job-listing">
+				<a href="index.php?controller=annonce&action=details&id=<?php echo$annonce['id']?>" class="job-listing">
 
 					<!-- Job Listing Details -->
 					<div class="job-listing-details">

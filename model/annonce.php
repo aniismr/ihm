@@ -8,7 +8,7 @@ class annonce{
     private $del;
     private $cat;
     private $user;
-    public function __construct($lib,$desc,$loc,$adr,$prix,$del,$cat,$user){
+    public function __construct($lib="",$desc="",$loc="",$adr="",$prix="",$del="",$cat="",$user=""){
         $this->libel=$lib;
         $this->desc=$desc;
        $this->loc=$loc;
@@ -40,12 +40,40 @@ class annonce{
         $req->execute();
         return $req;
     }
-     public static function getAnnoncedetail(){
+     public static function getAnnoncedetail($id){
         global $db;
-        $req = $db->prepare('select * from annonce a inner join categorie c on a.id_categorie = c.id inner join utilisateur u on a.id_user = a.id where a.id=?' );
-        $req->execute();
+        $req = $db->prepare('select * from annonce a inner join categorie c on a.id_categorie = c.id inner join utilisateur u on a.id_user = u.id where a.id=?' );
+        $req->execute(array($id));
+
         return $req;
     }
+
+      public static function getAnnoncecatloc($loc="",$cat=""){
+      	global $db;
+      	if (isset($loc) && isset($cat)){
+      		 $req = $db->prepare("select * from annonce where id_location=? and id_categorie=?" );
+      		 $req->execute(array($loc,$cat));
+      	}
+      	else if (isset($loc)){
+      		$req = $db->prepare("select * from annonce where id_location=? " );
+      		$req->execute(array($loc));
+      	}
+      	else if (isset($cat))
+      	{
+      		$req = $db->prepare("select * from annonce where id_categorie=? " );
+      		$req->execute(array($cat));
+      	}
+      	else
+      	{
+
+        	$req = $db->prepare("select * from annonce  " );
+       		$req->execute();
+        }
+        return $req;
+    }
+
+
+   
 }
 
 

@@ -7,7 +7,7 @@ if(isset($action)){
     switch($action){
         case "login":
             if(isset($user)&&isset($pass)){
-                $tmp_user=new utilisateur($user,$pass);
+                $tmp_user=new utilisateur($user,$pass,"","","");
                 if($tmp_user->checkLogin()){
                     $_SESSION['user']=serialize($tmp_user);
 

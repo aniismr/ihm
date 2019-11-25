@@ -47,8 +47,7 @@
 						<label for="autocomplete-input" class="field-title ripple-effect">Où?</label>
 						<div class="input-with-icon">
 						<select id="listskills" class="selectpicker with-border" data-size="7" title="Selectionner skills" data-live-search="true">
-						</select>
-							<i class="icon-material-outline-location-on"></i>
+                        </select>
 						</div>
 					</div>
 

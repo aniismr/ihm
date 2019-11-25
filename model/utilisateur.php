@@ -7,9 +7,25 @@ class utilisateur{
     private $prenom;
     private $etat;
     private $photo;
-    public function __construct($email="",$pw=""){
+    public function __construct($email,$pw,$type="",$nom,$prenom){
         $this->pw=$pw;
         $this->email=$email;
+        $this->type=$type;
+        $this->nom=$nom;
+        $this->prenom=$prenom;
+    }
+
+
+     public function adduser(){
+        try{
+        global $db;
+        $req=$db->prepare('insert into utilisateur(email,mdp,type)values(?,?,?);');
+        $req->execute(array($this->email,$this->pw,$this->type));
+        return $req;
+    }
+    catch(Exception $e){
+        echo $e->getMessage();
+    }
     }
     public static function getNbJobbeurs(){
         global $db;

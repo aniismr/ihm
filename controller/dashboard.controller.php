@@ -3,6 +3,7 @@ require('model/utilisateur.php');
 require('model/location.php');
 require('model/categorie.php');
 require('model/annonce.php');
+
 $locations=location::getlocations();
 $categories=categorie::getCategories();
 if(isset($_SESSION['user'])){
@@ -25,7 +26,11 @@ if(isset($_SESSION['user'])){
                 $location=location::getId($_POST['location']);
                 $tmp_ann=new annonce($_POST['libelle'],$_POST['description'],$location,$_POST['adresse'],$_POST['prix'],$_POST['delais'],$categ,$user->getId());
                 $tmp_ann->addAnnonce();
+            case'adduser':
 
+                $tmp_user=new utilisateur($_POST['email'],$_POST['pass'],'jobbeur');
+                $tmp_user->adduser();
+                
 
 
 

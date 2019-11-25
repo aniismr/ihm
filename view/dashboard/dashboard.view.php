@@ -35,13 +35,13 @@
 								<ul>
 									<li><a href="dashboard-manage-tasks.html">Gérer mes demandes <span class="nav-tag">2</span></a></li>
 									<li><a href="dashboard-manage-bidders.html">Gérer les offres</a></li>
-									<li><a href="index.php?controller=dashboard&action=postTask">Demander un service</a></li>
+									<li><a href="?controller=dashboard&action=postTask">Demander un service</a></li>
 								</ul>	
 							</li>
 						</ul>
 
 						<ul data-submenu-title="Mon compte">
-							<li><a href="index.php?controller=dashboard&action=parametre"><i class="icon-material-outline-settings"></i> Paramètres</a></li>
+							<li><a href="?controller=dashboard&action=parametre"><i class="icon-material-outline-settings"></i> Paramètres</a></li>
 							<li><a href="index-logged-out.html"><i class="icon-material-outline-power-settings-new"></i> Deconnexion</a></li>
 						</ul>
 						

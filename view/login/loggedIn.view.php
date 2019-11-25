@@ -170,9 +170,9 @@
         </div>
         
         <ul class="user-menu-small-nav">
-            <li><a href="index.php?controller=dashboard"><i class="icon-material-outline-dashboard"></i> Tableau de bord</a></li>
-            <li><a href="index.php?controller=dashboard&action=parametre"><i class="icon-material-outline-settings"></i> Paramètres</a></li>
-            <li><a href="index.php?controller=login&action=logout"><i class="icon-material-outline-power-settings-new"></i> Deconnexion</a></li>
+            <li><a href="?controller=dashboard"><i class="icon-material-outline-dashboard"></i> Tableau de bord</a></li>
+            <li><a href="?controller=dashboard&action=parametre"><i class="icon-material-outline-settings"></i> Paramètres</a></li>
+            <li><a href="?controller=login&action=logout"><i class="icon-material-outline-power-settings-new"></i> Deconnexion</a></li>
         </ul>
 
         </div>

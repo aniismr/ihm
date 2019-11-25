@@ -133,6 +133,7 @@ $(document).ready(function(){
 		data:'curcat='+str,
 		success:function(html){
 			$('#listskills').html(html);
+			$('#listskills').selectpicker('refresh');
 
 		}
 	});

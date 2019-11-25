@@ -4,6 +4,8 @@
     require ('model/categorie.php');
     require ('model/utilisateur.php');
     require ('model/location.php');
+    require ('model/skill.php');
+
     $categories=categorie::getCategories();
     $nbCategories=categorie::getNbCategories();
     $nbAnnonces=annonce::getNbAnnonces();
@@ -19,7 +21,7 @@
         require('view/login/loggedOut.view.php');
         require('view/login/popupLogIn.view.php');
     }
-    
+
     require('view/home.view.php');
     require('view/template/template.php');  
  

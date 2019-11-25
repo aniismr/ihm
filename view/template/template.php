@@ -122,7 +122,29 @@ $('#snackbar-user-status label').click(function() {
 	}); 
 }); 
 </script>
+<script>
+$(document).ready(function(){
+	$('#skills').on('change',function(){
+		var str=$('#skills').val();
+	if(str){
+	$.ajax({
+		type:"POST",
+		url:'index.php?controller=ajax',
+		data:'curcat='+str,
+		success:function(html){
+			$('#listskills').html(html);
 
+		}
+	});
+
+}
+else{
+	$('#listskills').html("<option class='bs-title-option' value=''>Selectionner skills</option>");
+}
+	})
+})
+
+</script>
 
 <!-- Google Autocomplete -->
 <script>

@@ -68,7 +68,11 @@
 		</div>
 	</div>
 	<!-- Header / End -->
+	<div class="clearfix"></div>
+<!-- Header Container / End -->
 
+<!-- Spacer -->
+<div class="margin-top-90"></div>
 </header>
 <?php if(isset($dashboard)){?>
 	<div class="dashboard-container">

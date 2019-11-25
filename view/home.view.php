@@ -53,7 +53,7 @@
 
 					<!-- Button -->
 					<div class="intro-search-button">
-						<button class="button ripple-effect" onclick="window.location.href='jobs-list-layout-full-page-map.html'">Chercher</button>
+						<button class="button ripple-effect" onclick="window.location.href='index.php?controller=jobeur'">Chercher</button>
 					</div>
 				</div>
 			</div>

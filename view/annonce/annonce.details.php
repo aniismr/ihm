@@ -16,7 +16,7 @@ $title="Annonce details";?>
 							<h3><?php echo($annonce['libelle']); ?></h3>
 							
 							<ul>
-								<li><a href="single-company-profile.html"><i class="icon-material-outline-business"></i> King</a></li>
+								<li><a href="single-company-profile.html"><i class="icon-material-outline-business"></i> <?= $annonce[32] ?></a></li>
 								<li><div class="star-rating" data-rating="4.9"></div></li>
 								<li><img class="flag" src="images/flags/gb.svg" alt=""> <?= $annonce["adresse"] ?></li>
 								<li><div class="verified-badge-with-title">Verified</div></li>
@@ -25,8 +25,8 @@ $title="Annonce details";?>
 					</div>
 					<div class="right-side">
 						<div class="salary-box">
-							<div class="salary-type">Annual Salary</div>
-							<div class="salary-amount">$35k - $38k</div>
+							<div class="salary-type">    Prix    </div>
+							<div class="salary-amount">  <?= $annonce["prix"] ?> DT </div>
 						</div>
 					</div>
 				</div>
@@ -46,11 +46,49 @@ $title="Annonce details";?>
 
 			<div class="single-page-section">
 				<h3 class="margin-bottom-25">Job Description</h3>
-				<p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+				<p>  <?= $annonce[2] ?> </p>
+			</div>
 
-				<p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+			<div class="single-page-section">
+				<h3 class="margin-bottom-25">Propeietere de l'annonce</h3>
 
-				<p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+				<div class="freelancer">
+
+					<!-- Overview -->
+					<div class="freelancer-overview">
+						<div class="freelancer-overview-inner">
+							
+							<!-- Bookmark Icon -->
+							
+							
+							<!-- Avatar -->
+							<div class="freelancer-avatar">
+								<div class="verified-badge"></div>
+								<a href="single-freelancer-profile.html"><img src="<?php echo'public/images/'.$annonce[22] ?>" alt=""></a>
+							</div>
+
+							<!-- Name -->
+							<div class="freelancer-name">
+								<h4><a href="#"><?= $annonce[18] ?> <?= $annonce[19] ?> </a></h4>
+								
+								<!-- Rating -->
+								
+							</div>
+						</div>
+					</div>
+					
+					<!-- Details -->
+					<div class="freelancer-details">
+						<div class="freelancer-details-list">
+							<ul>
+								<li>Location <strong><i class="icon-material-outline-location-on"></i> London</strong></li>
+								<li>Rate <strong>$60 / hr</strong></li>
+								<li>Job Success <strong>95%</strong></li>
+							</ul>
+						</div>
+						<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
+					</div>
+				</div>
 			</div>
 
 			<div class="single-page-section">
@@ -107,7 +145,7 @@ $title="Annonce details";?>
 
 								<!-- Details -->
 								<div class="job-listing-description">
-									<h4 class="job-listing-company">King <span class="verified-badge" title="Verified Employer" data-tippy-placement="top"></span></h4>
+									<h4 class="job-listing-company"><?= $annonce[32] ?> <span class="verified-badge" title="Verified Employer" data-tippy-placement="top"></span></h4>
 									<h3 class="job-listing-title">Restaurant Manager</h3>
 								</div>
 							</div>
@@ -144,22 +182,18 @@ $title="Annonce details";?>
 								<li>
 									<i class="icon-material-outline-location-on"></i>
 									<span>Location</span>
-									<h5>London, United Kingdom</h5>
+									<h5><?= $annonce[32] ?>, <?= $annonce[6] ?></h5>
 								</li>
-								<li>
-									<i class="icon-material-outline-business-center"></i>
-									<span>Job Type</span>
-									<h5>Full Time</h5>
-								</li>
+								
 								<li>
 									<i class="icon-material-outline-local-atm"></i>
-									<span>Salary</span>
-									<h5>$35k - $38k</h5>
+									<span>Prix</span>
+									<h5><?= $annonce["prix"] ?> DT</h5>
 								</li>
 								<li>
 									<i class="icon-material-outline-access-time"></i>
 									<span>Date Posted</span>
-									<h5>2 days ago</h5>
+									<h5><?= $annonce[7] ?></h5>
 								</li>
 							</ul>
 						</div>

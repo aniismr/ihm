@@ -42,7 +42,7 @@ class annonce{
     }
      public static function getAnnoncedetail($id){
         global $db;
-        $req = $db->prepare('select * from annonce a inner join categorie c on a.id_categorie = c.id inner join utilisateur u on a.id_user = u.id where a.id=?' );
+        $req = $db->prepare('select * from annonce a inner join categorie c on a.id_categorie = c.id inner join utilisateur u on a.id_user = u.id inner join location l on a.id_location = l.id where a.id=?' );
         $req->execute(array($id));
 
         return $req;

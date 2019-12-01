@@ -3,6 +3,105 @@
 
 $title="Annonce details";?>
 <?php ob_start() ?>
+<style>
+* {box-sizing: border-box}
+
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
 <!-- Titlebar
 ================================================== -->
 <div class="single-page-header" data-background-image="images/single-job.jpg">
@@ -16,7 +115,7 @@ $title="Annonce details";?>
 							<h3><?php echo($annonce['libelle']); ?></h3>
 							
 							<ul>
-								<li><a href="single-company-profile.html"><i class="icon-material-outline-business"></i> <?= $annonce[32] ?></a></li>
+								<li><a href="single-company-profile.html"><i class="icon-material-outline-business"></i> <?= $annonce[34] ?></a></li>
 								<li><div class="star-rating" data-rating="4.9"></div></li>
 								<li><img class="flag" src="images/flags/gb.svg" alt=""> <?= $annonce["adresse"] ?></li>
 								<li><div class="verified-badge-with-title">Verified</div></li>
@@ -49,55 +148,73 @@ $title="Annonce details";?>
 				<p>  <?= $annonce[2] ?> </p>
 			</div>
 
-			<div class="single-page-section">
-				<h3 class="margin-bottom-25">Propeietere de l'annonce</h3>
-
-				<div class="freelancer">
-
-					<!-- Overview -->
-					<div class="freelancer-overview">
-						<div class="freelancer-overview-inner">
-							
-							<!-- Bookmark Icon -->
-							
-							
-							<!-- Avatar -->
-							<div class="freelancer-avatar">
-								<div class="verified-badge"></div>
-								<a href="single-freelancer-profile.html"><img src="<?php echo'public/images/'.$annonce[22] ?>" alt=""></a>
-							</div>
-
-							<!-- Name -->
-							<div class="freelancer-name">
-								<h4><a href="#"><?= $annonce[18] ?> <?= $annonce[19] ?> </a></h4>
-								
-								<!-- Rating -->
-								
-							</div>
-						</div>
-					</div>
-					
-					<!-- Details -->
-					<div class="freelancer-details">
-						<div class="freelancer-details-list">
-							<ul>
-								<li>Location <strong><i class="icon-material-outline-location-on"></i> London</strong></li>
-								<li>Rate <strong>$60 / hr</strong></li>
-								<li>Job Success <strong>95%</strong></li>
-							</ul>
-						</div>
-						<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-					</div>
-				</div>
-			</div>
+			
 
 			<div class="single-page-section">
-				<h3 class="margin-bottom-30">Location</h3>
-				<div id="single-job-map-container">
-					<div id="singleListingMap" data-latitude="51.507717" data-longitude="-0.131095" data-map-icon="im im-icon-Hamburger"></div>
-					<a href="#" id="streetView">Street View</a>
-				</div>
+				
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="<?php echo'public/images/'.$annonce[12] ?>" style="width:100%">
+  
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="<?php echo'public/images/'.$annonce[13] ?>" style="width:100%">
+ 
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="<?php echo'public/images/'.$annonce[14] ?>" style="width:100%">
+ 
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
 			</div>
+
+
 
 			<div class="single-page-section">
 				<h3 class="margin-bottom-25">Similar Jobs</h3>
@@ -182,7 +299,7 @@ $title="Annonce details";?>
 								<li>
 									<i class="icon-material-outline-location-on"></i>
 									<span>Location</span>
-									<h5><?= $annonce[32] ?>, <?= $annonce[6] ?></h5>
+									<h5><?= $annonce[34] ?>, <?= $annonce[6] ?></h5>
 								</li>
 								
 								<li>
@@ -202,34 +319,48 @@ $title="Annonce details";?>
 
 				<!-- Sidebar Widget -->
 				<div class="sidebar-widget">
-					<h3>Bookmark or Share</h3>
+			
+				<h3 class="margin-bottom-25">Propeietere de l'annonce</h3>
 
-					<!-- Bookmark Button -->
-					<button class="bookmark-button margin-bottom-25">
-						<span class="bookmark-icon"></span>
-						<span class="bookmark-text">Bookmark</span>
-						<span class="bookmarked-text">Bookmarked</span>
-					</button>
+				<div class="freelancer" style="width:100%;">
 
-					<!-- Copy URL -->
-					<div class="copy-url">
-						<input id="copy-url" type="text" value="" class="with-border">
-						<button class="copy-url-button ripple-effect" data-clipboard-target="#copy-url" title="Copy to Clipboard" data-tippy-placement="top"><i class="icon-material-outline-file-copy"></i></button>
-					</div>
+					<!-- Overview -->
+					<div class="freelancer-overview">
+						<div class="freelancer-overview-inner">
+							
+							<!-- Bookmark Icon -->
+							
+							
+							<!-- Avatar -->
+							<div class="freelancer-avatar">
+								<div class="verified-badge"></div>
+								<a href="single-freelancer-profile.html"><img src="<?php echo'public/images/'.$annonce[24] ?>" alt=""></a>
+								
+							</div>
 
-					<!-- Share Buttons -->
-					<div class="share-buttons margin-top-25">
-						<div class="share-buttons-trigger"><i class="icon-feather-share-2"></i></div>
-						<div class="share-buttons-content">
-							<span>Interesting? <strong>Share It!</strong></span>
-							<ul class="share-buttons-icons">
-								<li><a href="#" data-button-color="#3b5998" title="Share on Facebook" data-tippy-placement="top"><i class="icon-brand-facebook-f"></i></a></li>
-								<li><a href="#" data-button-color="#1da1f2" title="Share on Twitter" data-tippy-placement="top"><i class="icon-brand-twitter"></i></a></li>
-								<li><a href="#" data-button-color="#dd4b39" title="Share on Google Plus" data-tippy-placement="top"><i class="icon-brand-google-plus-g"></i></a></li>
-								<li><a href="#" data-button-color="#0077b5" title="Share on LinkedIn" data-tippy-placement="top"><i class="icon-brand-linkedin-in"></i></a></li>
-							</ul>
+							<!-- Name -->
+							<div class="freelancer-name">
+								<h4><a href="#"><?= $annonce[20] ?> <?= $annonce[21] ?> </a></h4>
+								
+								<!-- Rating -->
+								
+							</div>
 						</div>
 					</div>
+					
+					<!-- Details -->
+					<div class="freelancer-details">
+						<div class="freelancer-details-list">
+							<ul>
+								<li>Numero Telephone<strong><i class="icon-material-outline-location-on"></i> <?= $annonce[23] ?></strong></li>
+								
+								<li>E-mail <strong> <?= $annonce[22] ?> </strong></li>
+							</ul>
+						</div>
+						<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
+					</div>
+				</div>
+			
 				</div>
 
 			</div>

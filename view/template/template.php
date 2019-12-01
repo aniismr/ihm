@@ -45,11 +45,11 @@
 						</li>
 
 						<li>
-							<a href="index.php?controller=annonce">Trouver un job</a>
+							<a href="index.php?controller=annonce">Liste des annonces</a>
 						</li>
 
 						<li>
-							<a href="#">Demander un service</a>
+							<a href="#">Liste des Jobeurs</a>
 						</li>
 
 					</ul>

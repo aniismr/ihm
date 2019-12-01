@@ -19,7 +19,7 @@ ob_start();
 			</div>
 	
             <!-- Row -->
-            <form action="index.php?controller=dashboard&action=addannoce" method="post">
+            <form action="index.php?controller=dashboard&action=addannoce" method="post" enctype="multipart/form-data" >
 			<div class="row">
 
 				<!-- Dashboard Box -->
@@ -59,7 +59,7 @@ ob_start();
 								<div class="col-xl-4">
 									<div class="submit-field">
                                     <h5>Location</h5>
-										<select class="selectpicker with-border" data-size="7" title="Select Category" name="location">
+										<select class="selectpicker with-border" data-size="7" title="Select Location" name="location">
                                         <?php 
 				    while($location=$locations->fetch()){
 				     ?>
@@ -104,7 +104,7 @@ ob_start();
                                 <div class="col-xl-6">
 									<div class="submit-field">
 										<h5>Delais</h5>
-                                        <input type="date" class="with-border" placeholder="delais" name="delais">
+                                        <input type="number" class="with-border" placeholder="delais" name="delais">
 									</div>
 								</div>
 
@@ -114,10 +114,18 @@ ob_start();
 									<div class="submit-field">
 										<h5>Decrire votre projet</h5>
 										<textarea cols="30" rows="5" class="with-border" name="description"></textarea>
-										<div class="uploadButton margin-top-30">
-											<input class="uploadButton-input" type="file" accept="image/*, application/pdf" id="upload" multiple/>
-											<label class="uploadButton-button ripple-effect" for="upload">Telecharger des fichiers</label>
-											<span class="uploadButton-file-name">Images ou documents pouvant être utiles pour décrire votre projet</span>
+											<br>
+											<span class="uploadButton-file-name">Images pouvant être utiles pour décrire votre projet</span>
+											<br>
+											<input  type="file"  name ="photo" value="T1 " />
+						
+										
+											<input  type="file"  name ="photo2" value="T2" />
+							
+											<input  type="file" name ="photo3" value="T3"/>
+							
+										</div>
+											
 										</div>
 									</div>
 								</div>
@@ -125,7 +133,7 @@ ob_start();
 							</div>
 						</div>
 					</div>
-				</div>
+				
 
 				<div class="col-xl-12">
 					<input type="submit" name="submit" class="button ripple-effect big margin-top-30" value="Post a Task"   /> 

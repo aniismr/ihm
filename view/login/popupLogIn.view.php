@@ -59,13 +59,13 @@ ob_start();
             <!-- Account Type -->
             <div class="account-type">
                 <div>
-                    <input type="radio" name="account-type-radio" id="freelancer-radio" class="account-type-radio" checked/>
-                    <label for="freelancer-radio" class="ripple-effect-dark"><i class="icon-material-outline-account-circle"></i> Freelancer</label>
+                    <input type="radio" value="jobbeur" name="account-type-radio" id="freelancer-radio" class="account-type-radio" checked/>
+                    <label for="freelancer-radio" class="ripple-effect-dark"><i class="icon-material-outline-account-circle"></i> Jobbeur</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="account-type-radio" id="employer-radio" class="account-type-radio"/>
-                    <label for="employer-radio" class="ripple-effect-dark"><i class="icon-material-outline-business-center"></i> Employer</label>
+                    <input type="radio" value="demandeur" name="account-type-radio" id="employer-radio" class="account-type-radio"/>
+                    <label for="employer-radio" class="ripple-effect-dark"><i class="icon-material-outline-business-center"></i> Demandeur</label>
                 </div>
             </div>
                 

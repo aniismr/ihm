@@ -15,7 +15,7 @@
         $action=$_GET['action'];
         switch($action){
             case 'adduser':
-            $tmp_user=new utilisateur($_POST['email'],$_POST['pass'],'jobbeur',$_POST['nom'],$_POST['prenom']);
+            $tmp_user=new utilisateur($_POST['email'],$_POST['pass'],$_POST['account-type-radio'],$_POST['nom'],$_POST['prenom']);
             $tmp_user->adduser();
             header('location:index.php');
             break;

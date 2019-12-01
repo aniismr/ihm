@@ -8,7 +8,10 @@ class annonce{
     private $del;
     private $cat;
     private $user;
-    public function __construct($lib="",$desc="",$loc="",$adr="",$prix="",$del="",$cat="",$user=""){
+    private $photo1;
+    private $photo2;
+    private $photo3;
+    public function __construct($lib="",$desc="",$loc="",$adr="",$prix="",$del="",$cat="",$user="",$photo1="",$photo2="",$photo3=""){
         $this->libel=$lib;
         $this->desc=$desc;
        $this->loc=$loc;
@@ -17,6 +20,9 @@ class annonce{
        $this->del=$del;
        $this->cat=$cat; 
         $this->user=$user;
+        $this->photo1=$photo1;
+         $this->photo2=$photo2;
+          $this->photo3=$photo3;
 
     }    
 
@@ -29,8 +35,10 @@ class annonce{
     }
     public function addAnnonce(){
         global $db;
-        $req=$db->prepare('insert into annonce(libelle,description,delais,etat,prix,adresse,date,note,id_location,id_categorie,id_user)values(?,?,?,?,?,?,SYSDATE(),?,?,?,?);');
-        $req->execute(array($this->libel,$this->desc,$this->del,0,$this->prix,$this->adr,0,$this->loc,$this->cat,$this->user));
+        echo "eee".$this->photo2;
+        $req=$db->prepare('insert into annonce(libelle,description,delais,etat,prix,adresse,date,note,id_location,id_categorie,id_user,photo,photo2,photo3)values(?,?,?,?,?,?,SYSDATE(),?,?,?,?,?,?,?);');
+        $req->execute(array($this->libel,$this->desc,$this->del,0,$this->prix,$this->adr,0,$this->loc,$this->cat,$this->user,$this->photo1,$this->photo2,$this->photo3));
+
         return $req;
     }
 

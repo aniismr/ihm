@@ -1,20 +1,21 @@
-
-<!-- Titlebar
-================================================== -->
+<?php 
+$title="Detail du jobbeur";
+ob_start();
+?>
 <div class="single-page-header" data-background-image="public/images/single-job.jpg">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="single-page-header-inner">
 					<div class="left-side">
-						<div class="header-image"><a href="single-company-profile.html"><img src="public/images/company-logo-03a.png" alt=""></a></div>
+						<div class="header-image"><a href="single-company-profile.html"><img src="public/images/<?php echo($jobeur['photo']);?>" alt=""></a></div>
 						<div class="header-details">
-							<h3>Restaurant General Manager</h3>
-							<h5>About the Employer</h5>
+							<h3><?php echo($jobeur['nom']) ;?> <?php echo($jobeur['prenom']);?></h3>
+							<h5>Information sur le jobbeur</h5>
 							<ul>
-								<li><a href="single-company-profile.html"><i class="icon-material-outline-business"></i> King</a></li>
-								<li><div class="star-rating" data-rating="4.9"></div></li>
-								<li><img class="flag" src="public/images/flags/gb.svg" alt=""> United Kingdom</li>
+								
+								<li><div class="star-rating" data-rating="<?php echo($jobeur['rate']);?>"></div></li>
+								<li><img class="flag" src="public/images/flags/tn.png" alt=""> Tunisie</li>
 								<li><div class="verified-badge-with-title">Verified</div></li>
 							</ul>
 						</div>
@@ -22,7 +23,7 @@
 					<div class="right-side">
 						<div class="salary-box">
 							<div class="salary-type">Annual Salary</div>
-							<div class="salary-amount">$35k - $38k</div>
+							<div class="salary-amount"><?php echo($jobeur['sal_min']);?> DT</div>
 						</div>
 					</div>
 				</div>
@@ -32,39 +33,48 @@
 </div>
 
 
-<!-- Page Content
-================================================== -->
 <div class="container">
 	<div class="row">
 		
 		<!-- Content -->
 		<div class="col-xl-8 col-lg-8 content-right-offset">
+			<?php while($job=$jobeurs->fetch()){
 
+			?>
+			<div class="job-overview">
+						<div class="job-overview-headline"><?php echo($job['cnamei']);?></div>
+						<div class="job-overview-inner">
+							<ul>
+								<li>
+									<i class="bookmark-icon"></i>
+									<span>Skill</span>
+									<h5><?php echo($job['cskilli']);?></h5>
+								</li>
+							</ul>
+						</div>
+			</div>
+			<?php };?>
 			<div class="single-page-section">
-				<h3 class="margin-bottom-25">Job Description</h3>
-				<p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+				<h3 class="margin-bottom-25">Description</h3>
+				<p><?php echo($jobeur['description']);?></p>
 
-				<p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-
-				<p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
 			</div>
 
 			<div class="single-page-section">
 				<h3 class="margin-bottom-30">Location</h3>
 				<div id="single-job-map-container">
 					<div id="singleListingMap" data-latitude="51.507717" data-longitude="-0.131095" data-map-icon="im im-icon-Hamburger"></div>
-					<a href="#" id="streetView">Street View</a>
+					
 				</div>
 			</div>
 
 			<div class="single-page-section">
-				<h3 class="margin-bottom-25">Similar Jobs</h3>
+				<h3 class="margin-bottom-25"></h3>
 
 				<!-- Listings Container -->
 				<div class="listings-container grid-layout">
 
-						<!-- Job Listing -->
-		
+					</div>
 					<!-- Listings Container / End -->
 
 				</div>
@@ -74,34 +84,37 @@
 		<!-- Sidebar -->
 		<div class="col-xl-4 col-lg-4">
 			<div class="sidebar-container">
-
-				<a href="#small-dialog" class="apply-now-button popup-with-zoom-anim">Apply Now <i class="icon-material-outline-arrow-right-alt"></i></a>
 					
 				<!-- Sidebar Widget -->
 				<div class="sidebar-widget">
 					<div class="job-overview">
-						<div class="job-overview-headline">Job Summary</div>
+						<div class="job-overview-headline">Detail du jobbeur</div>
 						<div class="job-overview-inner">
 							<ul>
 								<li>
 									<i class="icon-material-outline-location-on"></i>
 									<span>Location</span>
-									<h5>London, United Kingdom</h5>
-								</li>
-								<li>
-									<i class="icon-material-outline-business-center"></i>
-									<span>Job Type</span>
-									<h5>Full Time</h5>
+									<h5><?php echo($jobeur['ville']);?></h5>
 								</li>
 								<li>
 									<i class="icon-material-outline-local-atm"></i>
-									<span>Salary</span>
-									<h5>$35k - $38k</h5>
+									<span>Salaire</span>
+									<h5><?php echo($jobeur['sal_min']);?></h5>
 								</li>
 								<li>
 									<i class="icon-material-outline-access-time"></i>
-									<span>Date Posted</span>
-									<h5>2 days ago</h5>
+									<span>Date d'inscription</span>
+									<h5><?php echo($jobeur['date_inscrit']);?></h5>
+								</li>
+								<li>
+									<i class="icon-material-outline-location-on"></i>
+									<span>Téléphone</span>
+									<h5><?php echo($jobeur['num_tel']);?></h5>
+								</li>
+								<li>
+									<i class="icon-material-outline-location-on"></i>
+									<span>Email</span>
+									<h5><?php echo($jobeur['email']);?></h5>
 								</li>
 							</ul>
 						</div>
@@ -145,4 +158,4 @@
 
 	</div>
 </div>
-
+<?php $content=ob_get_clean();?>

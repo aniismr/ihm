@@ -104,7 +104,7 @@ img {vertical-align: middle;}
 </style>
 <!-- Titlebar
 ================================================== -->
-<div class="single-page-header" data-background-image="images/single-job.jpg">
+<div class="single-page-header" data-background-image="public/images/single-job.jpg">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -115,9 +115,9 @@ img {vertical-align: middle;}
 							<h3><?php echo($annonce['libelle']); ?></h3>
 							
 							<ul>
-								<li><a href="single-company-profile.html"><i class="icon-material-outline-business"></i> <?= $annonce[34] ?></a></li>
+								<li><a href="single-company-profile.html"><i class="icon-material-outline-business"></i> <?= $annonce[37] ?></a></li>
 								<li><div class="star-rating" data-rating="4.9"></div></li>
-								<li><img class="flag" src="images/flags/gb.svg" alt=""> <?= $annonce["adresse"] ?></li>
+								<li><img class="flag" src="public/images/flags/tn.png" alt=""> <?= $annonce["adresse"] ?></li>
 								<li><div class="verified-badge-with-title">Verified</div></li>
 							</ul>
 						</div>
@@ -144,7 +144,7 @@ img {vertical-align: middle;}
 		<div class="col-xl-8 col-lg-8 content-right-offset">
 
 			<div class="single-page-section">
-				<h3 class="margin-bottom-25">Job Description</h3>
+				<h3 class="margin-bottom-25">Description de l'annonce</h3>
 				<p>  <?= $annonce[2] ?> </p>
 			</div>
 
@@ -216,90 +216,24 @@ function showSlides(n) {
 
 
 
-			<div class="single-page-section">
-				<h3 class="margin-bottom-25">Similar Jobs</h3>
 
-				<!-- Listings Container -->
-				<div class="listings-container grid-layout">
-
-						<!-- Job Listing -->
-						<a href="#" class="job-listing">
-
-							<!-- Job Listing Details -->
-							<div class="job-listing-details">
-								<!-- Logo -->
-								<div class="job-listing-company-logo">
-									<img src="images/company-logo-02.png" alt="">
-								</div>
-
-								<!-- Details -->
-								<div class="job-listing-description">
-									<h4 class="job-listing-company">Coffee</h4>
-									<h3 class="job-listing-title">Barista and Cashier</h3>
-								</div>
-							</div>
-
-							<!-- Job Listing Footer -->
-							<div class="job-listing-footer">
-								<ul>
-									<li><i class="icon-material-outline-location-on"></i> San Francisco</li>
-									<li><i class="icon-material-outline-business-center"></i> Full Time</li>
-									<li><i class="icon-material-outline-account-balance-wallet"></i> $35000-$38000</li>
-									<li><i class="icon-material-outline-access-time"></i> 2 days ago</li>
-								</ul>
-							</div>
-						</a>
-
-						<!-- Job Listing -->
-						<a href="#" class="job-listing">
-
-							<!-- Job Listing Details -->
-							<div class="job-listing-details">
-								<!-- Logo -->
-								<div class="job-listing-company-logo">
-									<img src="images/company-logo-03.png" alt="">
-								</div>
-
-								<!-- Details -->
-								<div class="job-listing-description">
-									<h4 class="job-listing-company"><?= $annonce[32] ?> <span class="verified-badge" title="Verified Employer" data-tippy-placement="top"></span></h4>
-									<h3 class="job-listing-title">Restaurant Manager</h3>
-								</div>
-							</div>
-
-							<!-- Job Listing Footer -->
-							<div class="job-listing-footer">
-								<ul>
-									<li><i class="icon-material-outline-location-on"></i> San Francisco</li>
-									<li><i class="icon-material-outline-business-center"></i> Full Time</li>
-									<li><i class="icon-material-outline-account-balance-wallet"></i> $35000-$38000</li>
-									<li><i class="icon-material-outline-access-time"></i> 2 days ago</li>
-								</ul>
-							</div>
-						</a>
-					</div>
-					<!-- Listings Container / End -->
-
-				</div>
 		</div>
 		
 
 		<!-- Sidebar -->
 		<div class="col-xl-4 col-lg-4">
 			<div class="sidebar-container">
-
-				<a href="#small-dialog" class="apply-now-button popup-with-zoom-anim">Apply Now <i class="icon-material-outline-arrow-right-alt"></i></a>
 					
 				<!-- Sidebar Widget -->
 				<div class="sidebar-widget">
 					<div class="job-overview">
-						<div class="job-overview-headline">Job Summary</div>
+						<div class="job-overview-headline">Details annonce</div>
 						<div class="job-overview-inner">
 							<ul>
 								<li>
 									<i class="icon-material-outline-location-on"></i>
 									<span>Location</span>
-									<h5><?= $annonce[34] ?>, <?= $annonce[6] ?></h5>
+									<h5><?= $annonce[37] ?>, <?= $annonce[6] ?></h5>
 								</li>
 								
 								<li>
@@ -309,7 +243,7 @@ function showSlides(n) {
 								</li>
 								<li>
 									<i class="icon-material-outline-access-time"></i>
-									<span>Date Posted</span>
+									<span>Date d'annonce</span>
 									<h5><?= $annonce[7] ?></h5>
 								</li>
 							</ul>

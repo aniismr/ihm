@@ -80,6 +80,16 @@ class annonce{
         return $req;
     }
 
+    public static function getAnnoncemot($mot){
+        global $db;
+        $ch="select * from annonce where libelle like '%".$mot."%'";
+        echo "eee".$ch;
+        $req = $db->prepare($ch);
+       $req->execute();
+
+        return $req;
+    }
+
 
    
 }

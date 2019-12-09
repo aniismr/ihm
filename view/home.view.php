@@ -6,7 +6,7 @@
 <!-- Intro Banner
 ================================================== -->
 <!-- add class "disable-gradient" to enable consistent background overlay -->
-<div class="intro-banner" data-background-image="public/images/home-background.jpg">
+<div class="intro-banner" data-background-image="public/images/1122.png">
 	<div class="container">
 		
 		<!-- Intro Headline -->
@@ -23,15 +23,16 @@
 		</div>
 		
 		<!-- Search Bar -->
+		<form action="index.php?controller=jobeur" method="post">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="intro-banner-search-form margin-top-95">
 
 					<!-- Search Field -->
 					<div class="intro-search-field with-autocomplete">
-						<label for="autocomplete-input" class="field-title ripple-effect">Où?</label>
+						<label for="autocomplete-input" class="field-title ripple-effect">Selectionner une categorie</label>
 						<div class="input-with-icon">
-						<select id="skills" class="selectpicker with-border" data-size="7" title="Selectionner la catégorie" data-live-search="true">
+						<select name="categorie" id="skills" class="selectpicker with-border" data-size="7" title="Selectionner la catégorie" data-live-search="true">
 							<?php while($categorie=$categories->fetch()){
 								?>
 							<option><?php echo($categorie['nom']);?>
@@ -44,21 +45,22 @@
 
 					<!-- Search Field -->
 					<div class="intro-search-field with-autocomplete">
-						<label for="autocomplete-input" class="field-title ripple-effect">Où?</label>
+						<label for="autocomplete-input" class="field-title ripple-effect">Selectionner une competence</label>
 						<div class="input-with-icon">
-						<select id="listskills" class="selectpicker with-border" data-size="7" title="Selectionner skills" data-live-search="true">
+						<select name="skill" id="listskills" class="selectpicker with-border" data-size="7" title="Selectionner skills" data-live-search="true">
                         </select>
 						</div>
 					</div>
 
 					<!-- Button -->
 					<div class="intro-search-button">
-						<button class="button ripple-effect" onclick="window.location.href='index.php?controller=jobeur'">Chercher</button>
+	
+						<button type="submit" class="button ripple-effect" >Chercher</button>
 					</div>
 				</div>
 			</div>
-		</div>
-
+		</div>	
+							</form>
 		<!-- Stats -->
 		<div class="row">
 			<div class="col-md-12">
@@ -136,7 +138,6 @@
                     <a href="jobs-list-layout-1.html" class="photo-box" data-background-image="<?php echo'public/images/villes/'.$location["photo"] ?>">
                         <div class="photo-box-content">
                             <h3><?= $location["nom"] ?></h3>
-                            <span>376 Jobs</span>
                         </div>
                     </a>
                 </div>
@@ -144,13 +145,6 @@
                         }
                 ?>
 
-			<div class="col-xl-12">
-				<div class="font-size-3 font-weight-medium d-block " style="text-decoration: underline;">
-					<a href="villes.html">
-                        Voir toutes les villes
-                    </a>
-				</div>
-			</div>
 		</div>
 	</div>
 </div>
@@ -185,13 +179,13 @@
 								<!-- Avatar -->
 								<div class="freelancer-avatar">
 									<div class="verified-badge"></div>
-									<a href="single-freelancer-profile.html"><img src="images/user-avatar-big-01.jpg" alt=""></a>
+									<a href="single-freelancer-profile.html"><img src="public/images/user-avatar-big-01.jpg" alt=""></a>
 								</div>
 
 								<!-- Name -->
 								<div class="freelancer-name">
-									<h4><a href="single-freelancer-profile.html">Tom Smith <img class="flag" src="images/flags/gb.svg" alt="" title="United Kingdom" data-tippy-placement="top"></a></h4>
-									<span>UI/UX Designer</span>
+									<h4><a href="single-freelancer-profile.html">Hassen Ben Jemaa <img class="flag" src="public/images/flags/tn.png" alt="" title="Sfax" data-tippy-placement="top"></a></h4>
+									<span>Plombier</span>
 								</div>
 
 								<!-- Rating -->
@@ -205,9 +199,9 @@
 						<div class="freelancer-details">
 							<div class="freelancer-details-list">
 								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> London</strong></li>
-									<li>Rate <strong>$60 / hr</strong></li>
-									<li>Job Success <strong>95%</strong></li>
+									<li>Location <strong><i class="icon-material-outline-location-on"></i> Sfax</strong></li>
+									<li>Salaire min: <strong>25 Dt</strong></li>
+									<li>Note globale <strong>95%</strong></li>
 								</ul>
 							</div>
 							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
@@ -228,13 +222,13 @@
 								<!-- Avatar -->
 								<div class="freelancer-avatar">
 									<div class="verified-badge"></div>
-									<a href="single-freelancer-profile.html"><img src="images/user-avatar-big-02.jpg" alt=""></a>
+									<a href="single-freelancer-profile.html"><img src="public/images/user-avatar-big-02.jpg" alt=""></a>
 								</div>
 
 								<!-- Name -->
 								<div class="freelancer-name">
-									<h4><a href="#">David Peterson <img class="flag" src="images/flags/de.svg" alt="" title="Germany" data-tippy-placement="top"></a></h4>
-									<span>iOS Expert + Node Dev</span>
+									<h4><a href="#">Chebil Amin <img class="flag" src="public/images/flags/tn.png" alt="" title="Germany" data-tippy-placement="top"></a></h4>
+									<span>Maçon</span>
 								</div>
 
 								<!-- Rating -->
@@ -248,12 +242,12 @@
 						<div class="freelancer-details">
 							<div class="freelancer-details-list">
 								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> Berlin</strong></li>
-									<li>Rate <strong>$40 / hr</strong></li>
-									<li>Job Success <strong>88%</strong></li>
+									<li>Location <strong><i class="icon-material-outline-location-on"></i> Gabes</strong></li>
+									<li>Salaire Min <strong>15 Dt</strong></li>
+									<li>Note globale <strong>88%</strong></li>
 								</ul>
 							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
+							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">Afficher le Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
 						</div>
 					</div>
 					<!-- Freelancer / End -->
@@ -269,13 +263,13 @@
 								
 								<!-- Avatar -->
 								<div class="freelancer-avatar">
-									<a href="single-freelancer-profile.html"><img src="images/user-avatar-placeholder.png" alt=""></a>
+									<a href="single-freelancer-profile.html"><img src="public/images/user-avatar-placeholder.png" alt=""></a>
 								</div>
 
 								<!-- Name -->
 								<div class="freelancer-name">
-									<h4><a href="#">Marcin Kowalski <img class="flag" src="images/flags/pl.svg" alt="" title="Poland" data-tippy-placement="top"></a></h4>
-									<span>Front-End Developer</span>
+									<h4><a href="#">Mourad ben ali <img class="flag" src="public/images/flags/tn.png" alt="" title="Poland" data-tippy-placement="top"></a></h4>
+									<span>Electricien</span>
 								</div>
 
 								<!-- Rating -->
@@ -289,98 +283,18 @@
 						<div class="freelancer-details">
 							<div class="freelancer-details-list">
 								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> Warsaw</strong></li>
-									<li>Rate <strong>$50 / hr</strong></li>
-									<li>Job Success <strong>100%</strong></li>
+									<li>Location <strong><i class="icon-material-outline-location-on"></i> Tunis</strong></li>
+									<li>Salaire Min: <strong>12 Dt</strong></li>
+									<li>Note Globale <strong>95%</strong></li>
 								</ul>
 							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
+							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">Afficher le Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
 						</div>
 					</div>
 					<!-- Freelancer / End -->
 
-					<!--Freelancer -->
-					<div class="freelancer">
-
-						<!-- Overview -->
-						<div class="freelancer-overview">
-								<div class="freelancer-overview-inner">
-								<!-- Bookmark Icon -->
-								<span class="bookmark-icon"></span>
-								
-								<!-- Avatar -->
-								<div class="freelancer-avatar">
-									<div class="verified-badge"></div>
-									<a href="single-freelancer-profile.html"><img src="images/user-avatar-big-03.jpg" alt=""></a>
-								</div>
-
-								<!-- Name -->
-								<div class="freelancer-name">
-									<h4><a href="#">Sindy Forest <img class="flag" src="images/flags/au.svg" alt="" title="Australia" data-tippy-placement="top"></a></h4>
-									<span>Magento Certified Developer</span>
-								</div>
-
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="5.0"></div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Details -->
-						<div class="freelancer-details">
-							<div class="freelancer-details-list">
-								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> Brisbane</strong></li>
-									<li>Rate <strong>$70 / hr</strong></li>
-									<li>Job Success <strong>100%</strong></li>
-								</ul>
-							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-						</div>
-					</div>
-					<!-- Freelancer / End -->
 					
-					<!--Freelancer -->
-					<div class="freelancer">
-
-						<!-- Overview -->
-						<div class="freelancer-overview">
-								<div class="freelancer-overview-inner">
-								<!-- Bookmark Icon -->
-								<span class="bookmark-icon"></span>
-								
-								<!-- Avatar -->
-								<div class="freelancer-avatar">
-									<a href="single-freelancer-profile.html"><img src="images/user-avatar-placeholder.png" alt=""></a>
-								</div>
-
-								<!-- Name -->
-								<div class="freelancer-name">
-									<h4><a href="#">Sebastiano Piccio <img class="flag" src="images/flags/it.svg" alt="" title="Italy" data-tippy-placement="top"></a></h4>
-									<span>Laravel Dev</span>
-								</div>
-
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="4.5"></div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Details -->
-						<div class="freelancer-details">
-							<div class="freelancer-details-list">
-								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> Milan</strong></li>
-									<li>Rate <strong>$80 / hr</strong></li>
-									<li>Job Success <strong>89%</strong></li>
-								</ul>
-							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-						</div>
-					</div>
-					<!-- Freelancer / End -->
+	
 								
 					<!--Freelancer -->
 					<div class="freelancer">
@@ -393,13 +307,13 @@
 								
 								<!-- Avatar -->
 								<div class="freelancer-avatar">
-									<a href="single-freelancer-profile.html"><img src="images/user-avatar-placeholder.png" alt=""></a>
+									<a href="single-freelancer-profile.html"><img src="public/images/user-avatar-placeholder.png" alt=""></a>
 								</div>
 
 								<!-- Name -->
 								<div class="freelancer-name">
-									<h4><a href="#">Gabriel Lagueux <img class="flag" src="images/flags/fr.svg" alt="" title="France" data-tippy-placement="top"></a></h4>
-									<span>WordPress Expert</span>
+									<h4><a href="#">Samir Ammous <img class="flag" src="public/images/flags/tn.png" alt="" title="France" data-tippy-placement="top"></a></h4>
+									<span>Menuisier</span>
 								</div>
 
 								<!-- Rating -->
@@ -413,9 +327,9 @@
 						<div class="freelancer-details">
 							<div class="freelancer-details-list">
 								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> Paris</strong></li>
+									<li>Location <strong><i class="icon-material-outline-location-on"></i> Sfax</strong></li>
 									<li>Rate <strong>$50 / hr</strong></li>
-									<li>Job Success <strong>100%</strong></li>
+									<li>Job Success <strong>95%</strong></li>
 								</ul>
 							</div>
 							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>

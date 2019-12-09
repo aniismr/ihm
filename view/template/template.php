@@ -14,7 +14,6 @@
 ================================================== -->
 <link rel="stylesheet" href="public/css/style.css">
 <link rel="stylesheet" href="public/css/colors/blue.css">
-<link rel="stylesheet" href="public/css/bootstrap.min.css">
 
 </head><body>
 
@@ -34,7 +33,7 @@
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="index.php"><img src="public/images/logo.png" alt=""></a>
+					<a href="index.php"><img src="public/images/chanty.png" alt=""></a>
 				</div>
 
 				<!-- Main Navigation -->
@@ -46,11 +45,11 @@
 						</li>
 
 						<li>
-							<a href="index.php?controller=annonce">Liste des annonces</a>
+							<a href="index.php?controller=annonce">Trouver un job</a>
 						</li>
 
 						<li>
-							<a href="#">Liste des Jobeurs</a>
+							<a href="index.php?controller=jobeur">Liste des jobbeurs</a>
 						</li>
 
 					</ul>
@@ -152,6 +151,20 @@ else{
 
 </script>
 
+<script>
+$(document).ready(function(){
+                                            $('#skillid').on('click',function(){
+
+												var label=$('#skillpicker :selected').parent().attr('label');
+								
+												var str=$('#skillpicker').val();
+											
+												if(str!="")
+								
+												$('#arrayskill').append("<span class='badge badge-primary'><span></span><input name='sk[]' value='"+label+":"+str+"'/></span>");
+                                            })
+                                        })
+                                        </script>
 <!-- Google Autocomplete -->
 <script>
 	function initAutocomplete() {

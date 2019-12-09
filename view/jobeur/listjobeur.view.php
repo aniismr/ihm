@@ -1,46 +1,46 @@
 <?php 
+$title="Liste des jobs";
 ob_start()?>
-    
+
+<br/>
 <div class="container">
 	<div class="row">
 		<div class="col-xl-3 col-lg-4">
 			<div class="sidebar-container">
-				
+				<form action="index.php?controller=jobeur" method="post">
 				<!-- Location -->
 				<div class="sidebar-widget">
 					<h3>Location</h3>
-					<div class="input-with-icon">
-						<div id="autocomplete-container">
-							<input id="autocomplete-input" type="text" placeholder="Location">
-						</div>
-						<i class="icon-material-outline-location-on"></i>
-					</div>
+
+						<select id="location" class="selectpicker with-border" name="location" data-size="7" title="Selectionner la localisation" data-live-search="true">
+							<?php while($location=$locations->fetch()){
+								?>
+							<option><?php echo($location['nom']);?>
+							</option>
+							<?php } ?>
+						</select>
+								
 				</div>
 
 				<!-- Category -->
 				<div class="sidebar-widget">
-					<h3>Category</h3>
-					<select class="selectpicker default" multiple data-selected-text-format="count" data-size="7" title="All Categories" >
-						<option>Admin Support</option>
-						<option>Customer Service</option>
-						<option>Data Analytics</option>
-						<option>Design & Creative</option>
-						<option>Legal</option>
-						<option>Software Developing</option>
-						<option>IT & Networking</option>
-						<option>Writing</option>
-						<option>Translation</option>
-						<option>Sales & Marketing</option>
-					</select>
+					<h3>Categories</h3>
+					<select name="categorie" id="skills" class="selectpicker with-border" data-size="7" title="Selectionner la catégorie" data-live-search="true">
+							<?php while($categorie=$categories->fetch()){
+								?>
+							<option><?php echo($categorie['nom']);?>
+							</option>
+							<?php } ?>
+						</select>
 				</div>
 
 				<!-- Keywords -->
 				<div class="sidebar-widget">
-					<h3>Keywords</h3>
+					<h3>Skills</h3>
 					<div class="keywords-container">
 						<div class="keyword-input-container">
-							<input type="text" class="keyword-input" placeholder="e.g. task title"/>
-							<button class="keyword-input-button ripple-effect"><i class="icon-material-outline-add"></i></button>
+						<select name="skill" id="listskills" class="selectpicker with-border" data-size="7" title="Selectionner skills" data-live-search="true">
+                        </select>
 						</div>
 						<div class="keywords-list"><!-- keywords go here --></div>
 						<div class="clearfix"></div>
@@ -55,53 +55,13 @@ ob_start()?>
 					<!-- Range Slider -->
 					<input class="range-slider" type="text" value="" data-slider-currency="$" data-slider-min="10" data-slider-max="250" data-slider-step="5" data-slider-value="[10,250]"/>
 				</div>
-
-				<!-- Tags -->
 				<div class="sidebar-widget">
-					<h3>Skills</h3>
+				<input type="submit" name="submit" class="button ripple-effect big margin-top-30" value="Rechercher"   />
+			</div>
 
-					<div class="tags-container">
-						<div class="tag">
-							<input type="checkbox" id="tag1"/>
-							<label for="tag1">front-end dev</label>
-						</div>
-						<div class="tag">
-							<input type="checkbox" id="tag2"/>
-							<label for="tag2">angular</label>
-						</div>
-						<div class="tag">
-							<input type="checkbox" id="tag3"/>
-							<label for="tag3">react</label>
-						</div>
-						<div class="tag">
-							<input type="checkbox" id="tag4"/>
-							<label for="tag4">vue js</label>
-						</div>
-						<div class="tag">
-							<input type="checkbox" id="tag5"/>
-							<label for="tag5">web apps</label>
-						</div>
-						<div class="tag">
-							<input type="checkbox" id="tag6"/>
-							<label for="tag6">design</label>
-						</div>
-						<div class="tag">
-							<input type="checkbox" id="tag7"/>
-							<label for="tag7">wordpress</label>
-						</div>
-					</div>
-					<div class="clearfix"></div>
-
-					<!-- More Skills -->
-					<div class="keywords-container margin-top-20">
-						<div class="keyword-input-container">
-							<input type="text" class="keyword-input" placeholder="add more skills"/>
-							<button class="keyword-input-button ripple-effect"><i class="icon-material-outline-add"></i></button>
-						</div>
-						<div class="keywords-list"><!-- keywords go here --></div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
+							</form>
+				<!-- Tags -->
+		
 				<div class="clearfix"></div>
 
 			</div>
@@ -128,209 +88,72 @@ ob_start()?>
 			
 			<!-- Freelancers List Container -->
 			<div class="freelancers-container freelancers-list-layout compact-list margin-top-35">
+			<?php  $lastid=0;
+			$aid=array();
+			while($jobeur=$jobeurs->fetch()){
+					if (!in_array($jobeur['id'],$aid))
+						{$aid[$lastid]=$jobeur['id'];
+							$lastid++;
+
+						?>
+				<!--Freelancer -->
+				<div class="freelancer">
+					
+					<!-- Overview -->
+					<div class="freelancer-overview">
+						<div class="freelancer-overview-inner">
+							
+							<!-- Bookmark Icon -->
+							<span class="bookmark-icon"></span>
+							
+							<!-- Avatar -->
+							<div class="freelancer-avatar">
+								<div class="verified-badge"></div>
+								<a href="index.php?controller=jobeur&action=detail&id=<?php echo($jobeur['id']);?>"><img src="public/images/<?php echo($jobeur['photo']) ;?>"	  alt=""></a>
+							</div>
+
+							<!-- Name -->
+							<div class="freelancer-name">
+								<h4><a href="#"><?php echo($jobeur['nom']); ?>  <?php echo($jobeur['prenom']);?> </a></h4>
+
+								<!-- Rating -->
+								<div class="freelancer-rating">
+									<div class="star-rating" data-rating="<?php echo($jobeur['rate']);?>"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Details -->
+					<div class="freelancer-details">
+						<div class="freelancer-details-list">
+							<ul>
+								<li>Location <strong><i class="icon-material-outline-location-on"></i> <?php echo($jobeur['ville']);?> </strong></li>
+								<li>Rate <strong><?php echo($jobeur['sal_min']);?> DT/ hr</strong></li>
+
+							</ul>
+						</div>
+						
+						<a href="index.php?controller=jobeur&action=detail&id=<?php echo($jobeur['id']);?>" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
+						<div class="job-listing-description">
+							<h3 class="job-listing-title"></h3>
+
+							<!-- Job Listing Footer -->
+							<div class="job-listing-footer">
+								<ul>
+									
+									<li><i class="icon-material-outline-business-center"></i><?php echo($jobeur['cnamei']); ?></li>
+									<li><i class="icon-material-outline-access-time"></i> <?php echo ($jobeur['date_inscrit']);?></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+			
+				</div>
+					<?php }
+					}?><!-- Freelancer / End -->
+
 				
-				<!--Freelancer -->
-				<div class="freelancer">
-
-					<!-- Overview -->
-					<div class="freelancer-overview">
-						<div class="freelancer-overview-inner">
-							
-							<!-- Bookmark Icon -->
-							<span class="bookmark-icon"></span>
-							
-							<!-- Avatar -->
-							<div class="freelancer-avatar">
-								<div class="verified-badge"></div>
-								<a href="single-freelancer-profile.html"><img src="images/user-avatar-big-01.jpg" alt=""></a>
-							</div>
-
-							<!-- Name -->
-							<div class="freelancer-name">
-								<h4><a href="#">Tom Smith <img class="flag" src="images/flags/gb.svg" alt="" title="United Kingdom" data-tippy-placement="top"></a></h4>
-								<span>UI/UX Designer</span>
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="4.9"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Details -->
-					<div class="freelancer-details">
-						<div class="freelancer-details-list">
-							<ul>
-								<li>Location <strong><i class="icon-material-outline-location-on"></i> London</strong></li>
-								<li>Rate <strong>$60 / hr</strong></li>
-								<li>Job Success <strong>95%</strong></li>
-							</ul>
-						</div>
-						<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-					</div>
-				</div>
-				<!-- Freelancer / End -->
-
-				<!--Freelancer -->
-				<div class="freelancer">
-
-					<!-- Overview -->
-					<div class="freelancer-overview">
-						<div class="freelancer-overview-inner">
-							
-							<!-- Bookmark Icon -->
-							<span class="bookmark-icon"></span>
-							
-							<!-- Avatar -->
-							<div class="freelancer-avatar">
-								<div class="verified-badge"></div>
-								<a href="single-freelancer-profile.html"><img src="images/user-avatar-big-02.jpg" alt=""></a>
-							</div>
-
-							<!-- Name -->
-							<div class="freelancer-name">
-								<h4><a href="#">David Peterson <img class="flag" src="images/flags/de.svg" alt="" title="Germany" data-tippy-placement="top"></a></h4>
-								<span>iOS Expert + Node Dev</span>
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="4.2"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Details -->
-					<div class="freelancer-details">
-						<div class="freelancer-details-list">
-							<ul>
-								<li>Location <strong><i class="icon-material-outline-location-on"></i> Berlin</strong></li>
-								<li>Rate <strong>$40 / hr</strong></li>
-								<li>Job Success <strong>88%</strong></li>
-							</ul>
-						</div>
-						<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-					</div>
-				</div>
-				<!-- Freelancer / End -->
-
-				<!--Freelancer -->
-				<div class="freelancer">
-
-					<!-- Overview -->
-					<div class="freelancer-overview">
-						<div class="freelancer-overview-inner">
-							<!-- Bookmark Icon -->
-							<span class="bookmark-icon"></span>
-							
-							<!-- Avatar -->
-							<div class="freelancer-avatar">
-								<a href="single-freelancer-profile.html"><img src="images/user-avatar-placeholder.png" alt=""></a>
-							</div>
-
-							<!-- Name -->
-							<div class="freelancer-name">
-								<h4><a href="#">Marcin Kowalski <img class="flag" src="images/flags/pl.svg" alt="" title="Poland" data-tippy-placement="top"></a></h4>
-								<span>Front-End Developer</span>
-								<!-- Rating -->
-								<span class="company-not-rated margin-bottom-5">Minimum of 3 votes required</span>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Details -->
-					<div class="freelancer-details">
-						<div class="freelancer-details-list">
-							<ul>
-								<li>Location <strong><i class="icon-material-outline-location-on"></i> Warsaw</strong></li>
-								<li>Rate <strong>$50 / hr</strong></li>
-								<li>Job Success <strong>100%</strong></li>
-							</ul>
-						</div>
-						<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-					</div>
-				</div>
-				<!-- Freelancer / End -->
-
-				<!--Freelancer -->
-				<div class="freelancer">
-
-					<!-- Overview -->
-					<div class="freelancer-overview">
-							<div class="freelancer-overview-inner">
-							<!-- Bookmark Icon -->
-							<span class="bookmark-icon"></span>
-							
-							<!-- Avatar -->
-							<div class="freelancer-avatar">
-								<div class="verified-badge"></div>
-								<a href="single-freelancer-profile.html"><img src="images/user-avatar-big-03.jpg" alt=""></a>
-							</div>
-
-							<!-- Name -->
-							<div class="freelancer-name">
-								<h4><a href="#">Sindy Forest <img class="flag" src="images/flags/au.svg" alt="" title="Australia" data-tippy-placement="top"></a></h4>
-								<span>Magento Certified Developer</span>
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="5.0"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Details -->
-					<div class="freelancer-details">
-						<div class="freelancer-details-list">
-							<ul>
-								<li>Location <strong><i class="icon-material-outline-location-on"></i> Brisbane</strong></li>
-								<li>Rate <strong>$70 / hr</strong></li>
-								<li>Job Success <strong>100%</strong></li>
-							</ul>
-						</div>
-						<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-					</div>
-				</div>
-				<!-- Freelancer / End -->
-
-				<!--Freelancer -->
-				<div class="freelancer">
-
-					<!-- Overview -->
-					<div class="freelancer-overview">
-							<div class="freelancer-overview-inner">
-							<!-- Bookmark Icon -->
-							<span class="bookmark-icon"></span>
-							
-							<!-- Avatar -->
-							<div class="freelancer-avatar">
-								<a href="single-freelancer-profile.html"><img src="images/user-avatar-placeholder.png" alt=""></a>
-							</div>
-
-							<!-- Name -->
-							<div class="freelancer-name">
-								<h4><a href="#">Sebastiano Piccio <img class="flag" src="images/flags/it.svg" alt="" title="Italy" data-tippy-placement="top"></a></h4>
-								<span>Laravel Dev</span>
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="4.5"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Details -->
-					<div class="freelancer-details">
-						<div class="freelancer-details-list">
-							<ul>
-								<li>Location <strong><i class="icon-material-outline-location-on"></i> Milan</strong></li>
-								<li>Rate <strong>$80 / hr</strong></li>
-								<li>Job Success <strong>89%</strong></li>
-							</ul>
-						</div>
-						<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-					</div>
-				</div>
-				<!-- Freelancer / End -->
 
 	
 			</div>
@@ -346,8 +169,8 @@ ob_start()?>
 						<nav class="pagination">
 							<ul>
 								<li class="pagination-arrow"><a href="#" class="ripple-effect"><i class="icon-material-outline-keyboard-arrow-left"></i></a></li>
-								<li><a href="#" class="ripple-effect">1</a></li>
-								<li><a href="#" class="current-page ripple-effect">2</a></li>
+								<li><a href="#" class="current-page ripple-effect">1</a></li>
+								<li><a href="#" class="ripple-effect">2</a></li>
 								<li><a href="#" class="ripple-effect">3</a></li>
 								<li><a href="#" class="ripple-effect">4</a></li>
 								<li class="pagination-arrow"><a href="#" class="ripple-effect"><i class="icon-material-outline-keyboard-arrow-right"></i></a></li>
@@ -361,4 +184,4 @@ ob_start()?>
 		</div>
 	</div>
 </div>
-<?php $content=ob_get_clean();?>
+<?php $content=ob_get_clean(); ?>

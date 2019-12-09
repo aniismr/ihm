@@ -143,7 +143,7 @@
     <!-- Messages -->
     <div class="header-notifications user-menu">
         <div class="header-notifications-trigger">
-            <a href="#"><div class="user-avatar status-online"><img src="public/images/user-avatar-small-01.jpg" alt=""></div></a>
+            <a href="#"><div class="user-avatar status-online"><img src="public/images/<?php echo($user->getPhoto());?>" alt=""></div></a>
         </div>
 
         <!-- Dropdown -->
@@ -154,9 +154,9 @@
 
                 <!-- User Name / Avatar -->
                 <div class="user-details">
-                    <div class="user-avatar status-online"><img src="public/images/user-avatar-small-01.jpg" alt=""></div>
+                    <div class="user-avatar status-online"><img src="public/images/<?php echo($user->getPhoto());?> " alt=""></div>
                     <div class="user-name">
-                        <?php echo($user->getName());?> <?php echo($user->getPrenom());?> <span><?php if(($user->getEtat())==0)echo("Utilisateur Normal");else echo("Jobeur");?></span>
+                        <?php echo($user->getName());?> <?php echo($user->getPrenom());?> <span><?php if(($user->getType())=="utilisateur")echo("Utilisateur Normal");else echo("Jobeur");?></span>
                     </div>
                 </div>
                 
@@ -170,7 +170,7 @@
         </div>
         
         <ul class="user-menu-small-nav">
-            <li><a href="?controller=dashboard"><i class="icon-material-outline-dashboard"></i> Tableau de bord</a></li>
+
             <li><a href="?controller=dashboard&action=parametre"><i class="icon-material-outline-settings"></i> Paramètres</a></li>
             <li><a href="?controller=login&action=logout"><i class="icon-material-outline-power-settings-new"></i> Deconnexion</a></li>
         </ul>

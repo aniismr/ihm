@@ -3,7 +3,7 @@
 <div class="right-side">
 
 <div class="header-widget">
-    <a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><i class="icon-feather-log-in"></i> <span>Log In / Register</span></a>
+    <a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><i class="icon-feather-log-in"></i> <span>Connecter / s'inscrire</span></a>
 </div>
 
 <!-- Mobile Navigation Button -->

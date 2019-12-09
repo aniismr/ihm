@@ -57,7 +57,21 @@
 			</div>
 		</div>
 		<div class="col-xl-9 col-lg-8 content-left-offset">
+			<br>
+			<br>
+	
+		<form action="index.php?controller=annonce&action=listemot" method="post">
+									<div  class="submit-field">
+										
+										<input type="text" class="with-border"  placeholder="rechercher par mots clés" name="mot" >
+										<input class="intro-search-button" type="submit" name="submit" value="Rechercher"   />
+									</div> 
 
+						
+
+				
+									</form> 
+							
 			<h3 class="page-title">Search Results</h3>
 
 			<div class="notify-box margin-top-15">

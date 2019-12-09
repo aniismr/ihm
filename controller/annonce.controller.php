@@ -29,6 +29,13 @@ $categories=categorie::getCategories();
     if(isset($_GET['action'])){
         $action=$_GET['action'];
         switch($action){
+            case 'listemot':
+                echo "qazs".$_POST['mot'];
+                 if (isset($_POST['mot'])){
+                    $annonces=annonce::getAnnoncemot($_POST['mot']);
+                          require('view/annonce.list.php');
+                          break;
+                 }
             case 'liste':
                 $annonces=annonce::getAnnonces();
                  require('view/annonce.list.php'); 

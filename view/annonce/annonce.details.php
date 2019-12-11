@@ -268,7 +268,7 @@ function showSlides(n) {
 							<!-- Avatar -->
 							<div class="freelancer-avatar">
 								<div class="verified-badge"></div>
-								<a href="single-freelancer-profile.html"><img src="<?php echo'public/images/'.$annonce[24] ?>" alt=""></a>
+								<a href="index.php?controller=jobeur&action=detail&id=<?php echo($annonce[11]);?>" ><img src="<?php echo'public/images/'.$annonce[24] ?>" alt=""></a>
 								
 							</div>
 
@@ -283,7 +283,7 @@ function showSlides(n) {
 					</div>
 					
 					<!-- Details -->
-					<div class="freelancer-details">
+					<div class="freelancer-details" >
 						<div class="freelancer-details-list">
 							<ul>
 								<li>Numero Telephone<strong><i class="icon-material-outline-location-on"></i> <?= $annonce[23] ?></strong></li>
@@ -291,7 +291,7 @@ function showSlides(n) {
 								<li>E-mail <strong> <?= $annonce[22] ?> </strong></li>
 							</ul>
 						</div>
-						<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
+						<a href="index.php?controller=jobeur&action=detail&id=<?php echo($annonce[11]);?>" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
 					</div>
 				</div>
 			

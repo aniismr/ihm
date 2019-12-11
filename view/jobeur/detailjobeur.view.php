@@ -61,11 +61,46 @@ ob_start();
 			</div>
 
 			<div class="single-page-section">
-				<h3 class="margin-bottom-30">Location</h3>
-				<div id="single-job-map-container">
-					<div id="singleListingMap" data-latitude="51.507717" data-longitude="-0.131095" data-map-icon="im im-icon-Hamburger"></div>
+				<?php 
+			while($rate=$rates->fetch()){
 					
+
+						?>
+				<!--Freelancer -->
+				<div class="freelancer">
+					
+					<!-- Overview -->
+					<div class="freelancer-overview">
+						<div class="freelancer-overview-inner">
+							
+							<!-- Bookmark Icon -->
+							<span class="bookmark-icon"></span>
+							
+							<!-- Avatar -->
+							<div class="freelancer-avatar">
+								<div class="verified-badge"></div>
+								<a href="index.php?controller=jobeur&action=detail&id=<?php echo($jobeur['id']);?>"><img src="public/images/<?php echo($rate[9]) ;?>"	  alt=""></a>
+							</div>
+
+							<!-- Name -->
+							<div class="freelancer-name">
+								<h4><a href="#"><?php echo($rate[7]); ?>  <?php echo($rate[8]);?> </a></h4>
+
+								<!-- Rating -->
+								<div class="freelancer-rating">
+									<div class="star-rating" data-rating="<?php echo($rate['num']);?>"></div>
+								</div>
+							</div>
+
+						</div>
+							<li ><i   class="icon-material-outline-business-center"></i><?php echo($rate[2]); ?></li>
+					</div>
+					
+			
+			
 				</div>
+					<?php 
+					}?><!-- Freelancer / End -->
 			</div>
 
 			<div class="single-page-section">

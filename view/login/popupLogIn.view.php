@@ -89,10 +89,7 @@ ob_start();
                     <input type="password" class="input-text with-border" name="pass" id="password-register" placeholder="Password" required/>
                 </div>
 
-                <div class="input-with-icon-left">
-                    <i class="icon-material-outline-lock"></i>
-                    <input type="password" class="input-text with-border" name="password-repeat-register" id="password-repeat-register" placeholder="Repeat Password" required/>
-                </div>
+             
            
             
             <!-- Button -->

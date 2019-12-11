@@ -11,6 +11,8 @@
     $nbAnnonces=annonce::getNbAnnonces();
     $nbJobbeurs=utilisateur::getNbJobbeurs();
     $locations=location::getPhotoLocation();
+    $jobbeurs=utilisateur::getJobeurs();
+        
         if(isset($_GET['action'])){
         $action=$_GET['action'];
         switch($action){

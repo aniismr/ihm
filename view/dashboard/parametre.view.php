@@ -188,7 +188,7 @@ ob_start();
                             <div class="col-xl-6">
                                 <div class="submit-field">
                                     <h5>Numero de Téléphone </h5>
-                                    <input type="text" name="tel" class="with-border" value="+216">
+                                    <input type="number" name="tel" class="with-border" value="+216">
                                 </div>
                             </div>
 

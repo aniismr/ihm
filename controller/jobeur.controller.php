@@ -4,7 +4,7 @@
     require ('model/categorie.php');
     require ('model/utilisateur.php');
     require('model/location.php');
-   
+   require('model/rate.php');
 $locations=location::getlocations();
 $categories=categorie::getCategories();
 $skills=skill::getAllSkills();
@@ -37,6 +37,7 @@ $skills=skill::getAllSkills();
                     $id=$_GET['id'];
                     $jobeurs=utilisateur::getJobS($id);
                     $jobeur=utilisateur::getUser($id);
+                    $rates=rate::getrate($id);
                     require('view/jobeur/detailjobeur.view.php');
                     require('view/template/template.php');
                 }

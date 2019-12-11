@@ -159,13 +159,15 @@
 				<!-- Section Headline -->   
 				<div class="section-headline margin-top-0 margin-bottom-25">
 					<h3>Les jobbeurs les plus recrutés</h3>
-					<a href="freelancers-grid-layout.html" class="headline-link">Afficher tout les jobbeurs</a>
+					<a href="index.php?controller=annonce" class="headline-link">Afficher tout les jobbeurs</a>
 				</div>
 			</div>
 
 			<div class="col-xl-12">
 				<div class="default-slick-carousel freelancers-container freelancers-grid-layout">
-
+  <?php
+                    while($jobeur=$jobbeurs->fetch()){
+                ?>
 					<!--Freelancer -->
 					<div class="freelancer">
 
@@ -174,18 +176,18 @@
 							<div class="freelancer-overview-inner">
 								
 								<!-- Bookmark Icon -->
-								<span class="bookmark-icon"></span>
+							
 								
 								<!-- Avatar -->
 								<div class="freelancer-avatar">
 									<div class="verified-badge"></div>
-									<a href="single-freelancer-profile.html"><img src="public/images/user-avatar-big-01.jpg" alt=""></a>
+									<a href="index.php?controller=jobeur&action=detail&id=<?php echo($jobeur[0]);?>" ><img src="public/images/<?php echo($jobeur['photo']) ;?>" alt=""></a>
 								</div>
 
 								<!-- Name -->
 								<div class="freelancer-name">
-									<h4><a href="single-freelancer-profile.html">Hassen Ben Jemaa <img class="flag" src="public/images/flags/tn.png" alt="" title="Sfax" data-tippy-placement="top"></a></h4>
-									<span>Plombier</span>
+									<h4><a href="index.php?controller=jobeur&action=detail&id=<?php echo($jobeur[0]);?>" ><?php echo($jobeur['nom']); ?>  <?php echo($jobeur['prenom']);?><img class="flag" src="public/images/flags/tn.png" alt="" title="Sfax" data-tippy-placement="top"></a></h4>
+									
 								</div>
 
 								<!-- Rating -->
@@ -201,140 +203,31 @@
 								<ul>
 									<li>Location <strong><i class="icon-material-outline-location-on"></i> Sfax</strong></li>
 									<li>Salaire min: <strong>25 Dt</strong></li>
-									<li>Note globale <strong>95%</strong></li>
+								
 								</ul>
 							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
+								<a href="index.php?controller=jobeur&action=detail&id=<?php echo($jobeur[0]);?>" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
 						</div>
 					</div>
+					 <?php
+                        }
+                ?>
+
 					<!-- Freelancer / End -->
 
 					<!--Freelancer -->
-					<div class="freelancer">
-
-						<!-- Overview -->
-						<div class="freelancer-overview">
-							<div class="freelancer-overview-inner">
-								
-								<!-- Bookmark Icon -->
-								<span class="bookmark-icon"></span>
-								
-								<!-- Avatar -->
-								<div class="freelancer-avatar">
-									<div class="verified-badge"></div>
-									<a href="single-freelancer-profile.html"><img src="public/images/user-avatar-big-02.jpg" alt=""></a>
-								</div>
-
-								<!-- Name -->
-								<div class="freelancer-name">
-									<h4><a href="#">Chebil Amin <img class="flag" src="public/images/flags/tn.png" alt="" title="Germany" data-tippy-placement="top"></a></h4>
-									<span>Maçon</span>
-								</div>
-
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="5.0"></div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Details -->
-						<div class="freelancer-details">
-							<div class="freelancer-details-list">
-								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> Gabes</strong></li>
-									<li>Salaire Min <strong>15 Dt</strong></li>
-									<li>Note globale <strong>88%</strong></li>
-								</ul>
-							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">Afficher le Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-						</div>
-					</div>
+					
 					<!-- Freelancer / End -->
 
 					<!--Freelancer -->
-					<div class="freelancer">
-
-						<!-- Overview -->
-						<div class="freelancer-overview">
-							<div class="freelancer-overview-inner">
-								<!-- Bookmark Icon -->
-								<span class="bookmark-icon"></span>
-								
-								<!-- Avatar -->
-								<div class="freelancer-avatar">
-									<a href="single-freelancer-profile.html"><img src="public/images/user-avatar-placeholder.png" alt=""></a>
-								</div>
-
-								<!-- Name -->
-								<div class="freelancer-name">
-									<h4><a href="#">Mourad ben ali <img class="flag" src="public/images/flags/tn.png" alt="" title="Poland" data-tippy-placement="top"></a></h4>
-									<span>Electricien</span>
-								</div>
-
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="4.9"></div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Details -->
-						<div class="freelancer-details">
-							<div class="freelancer-details-list">
-								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> Tunis</strong></li>
-									<li>Salaire Min: <strong>12 Dt</strong></li>
-									<li>Note Globale <strong>95%</strong></li>
-								</ul>
-							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">Afficher le Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-						</div>
-					</div>
+				
 					<!-- Freelancer / End -->
 
 					
 	
 								
 					<!--Freelancer -->
-					<div class="freelancer">
-
-						<!-- Overview -->
-						<div class="freelancer-overview">
-								<div class="freelancer-overview-inner">
-								<!-- Bookmark Icon -->
-								<span class="bookmark-icon"></span>
-								
-								<!-- Avatar -->
-								<div class="freelancer-avatar">
-									<a href="single-freelancer-profile.html"><img src="public/images/user-avatar-placeholder.png" alt=""></a>
-								</div>
-
-								<!-- Name -->
-								<div class="freelancer-name">
-									<h4><a href="#">Samir Ammous <img class="flag" src="public/images/flags/tn.png" alt="" title="France" data-tippy-placement="top"></a></h4>
-									<span>Menuisier</span>
-								</div>
-
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="5.0"></div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Details -->
-						<div class="freelancer-details">
-							<div class="freelancer-details-list">
-								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> Sfax</strong></li>
-									<li>Rate <strong>$50 / hr</strong></li>
-									<li>Job Success <strong>95%</strong></li>
-								</ul>
-							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-						</div>
-					</div>
+					
 					<!-- Freelancer / End -->
 
 

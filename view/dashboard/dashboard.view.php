@@ -1,6 +1,6 @@
 <?php $title="Profile";?>
 <?php ob_start();?>
-<div class="dashboard-sidebar">
+<div class="col-2">
 		<div class="dashboard-sidebar-inner" data-simplebar>
 			<div class="dashboard-nav-container">
 
@@ -30,11 +30,16 @@
 									<li><a href="#"> Gérer mes offres <span class="nav-tag">3</span></a></li>
 								</ul>	
 							</li>
-							<li><a href="#"><i class="icon-material-outline-assignment"></i> Mes demandes </a>
+							<?php $store=unserialize($_SESSION['user']);
+							if($store->getType()!="jobbeur") {
+									echo"
+							<li><a href='#'><i class='icon-material-outline-assignment'></i> Mes demandes </a>
 								<ul>
-									<li><a href="index.php?controller=annonce&action=liste">Gérer mes demandes <span class="nav-tag">2</span></a></li>
-									<li><a href="dashboard-manage-bidders.html">Gérer les offres</a></li>
-									<li><a href="?controller=dashboard&action=postTask">Demander un service</a></li>
+									<li><a href='index.php?controller=annonce&action=liste'>Gérer mes demandes <span class='nav-tag'>2</span></a></li>
+									<li><a href='dashboard-manage-bidders.html'>Gérer les offres</a></li>
+			
+									<li><a href='?controller=dashboard&action=postTask'>Demander un service</a></li>";
+									}?>
 								</ul>	
 							</li>
 						</ul>

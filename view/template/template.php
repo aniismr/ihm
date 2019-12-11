@@ -72,13 +72,20 @@
 <!-- Header Container / End -->
 
 <!-- Spacer -->
-<div class="margin-top-90"></div>
+
 </header>
 <?php if(isset($dashboard)){?>
-	<div class="dashboard-container">
+	<div class="container-fluid">
+	<div class="row">
 	<?php echo($dashboard);
-	if(isset($content))echo($content);
+	
+	if(isset($content)){
+		echo"<div class='col-10'>";
+		echo($content);
+		echo"</div>";}
+		
 	?>
+	</div>
 	</div>
 	<?php 
 }else{
@@ -92,7 +99,9 @@
 <div class="clearfix"></div>
 <!-- Footer / End -->
 
+
 </div>
+
 <!-- Wrapper / End -->
 <?php if(isset($popup))echo($popup);?>
 <!-- Scripts
